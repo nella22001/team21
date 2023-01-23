@@ -1,9 +1,6 @@
-h1{
-    color: rgb(55, 6, 6);
-}
 
 .header {
-    background-color: rgb(167, 142, 109); /* miten tän hemmetin png tiedoston saa tähän laitettua värin sijaan :( */
+    background-color: rgb(167, 142, 109); 
     background-image: url('image/taustabanner.jpg');
     background-size: cover;
     background-position: center;
@@ -11,12 +8,14 @@ h1{
     width: 100%;
     height: 200px;
     background-position: center;
+    
 }
 
 body {
     padding: 0;
     margin: 0;
     background: rgba(255, 255, 255, 1);
+    
 }
 .navbar {
     background: rgb(167, 142, 109);
@@ -32,7 +31,7 @@ body {
 .navbar-brand {
     color: #fff;
     cursor: pointer;
-    margin-left: 5em;
+    margin-left: 15em;
 }
 .nav-link {
     margin-right: 5em;
@@ -60,6 +59,10 @@ body {
     background-position: center;
 }
 
+.container1{
+    background-color: #F4E9E9;
+}
+  
 form{
     
 }
