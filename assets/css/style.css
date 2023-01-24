@@ -64,8 +64,18 @@ body {
 }
 
 .container1{
-    background-color:#d4c5c5;
+    background-color: #fff;
     position: relative;
+   
+   
+}
+
+.container2{
+    background-color: #fff;
+}
+
+.col{
+    background-color: #fff;
 }
 
 .navbar-brand{
@@ -75,6 +85,6 @@ body {
 }
 
 main{
-    position: relative;
+    position:relative;
 }
 
