@@ -2,3 +2,15 @@ body{
     text-align: center;
 }
 
+table{
+    margin-left:515px
+    
+}
+
+table {
+    border-spacing: 20px;
+  }
+
+th {
+    text-align: left;
+  }
