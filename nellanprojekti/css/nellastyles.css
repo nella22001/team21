@@ -14,7 +14,7 @@ body {
     padding: 0;
     margin: 0;
     background: rgba(255, 255, 255, 1);
-    text-align: center;
+    
 }
 .navbar {
     height: 15em;
@@ -57,7 +57,7 @@ body {
 
   
 .background_image{
-    background-image: url(/nellanprojekti/images/BackgroundSalad.jpg);
+    background-image: url(/nellanprojekti/BackgroundSalad.jpg);
     background-size: cover;
     background-attachment: fixed;
     background-position: center;
@@ -79,9 +79,3 @@ main{
 
     height: 200px; 
 }
-
-h1 {
-    text-align: center;
-}
-
-
