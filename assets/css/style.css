@@ -87,8 +87,7 @@ body {
 
 main{
     position: relative;
-    padding: auto;
-    
+  
 }
 
 .description { /* what does position absolute do... */
