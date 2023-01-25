@@ -33,7 +33,9 @@ body {
     color: #fff;
     cursor: pointer;
     margin-left: 15em;
+    positin: relative;
 }
+
 .nav-link {
     margin-right: 5em;
     background-color:  #F4E9E9;
@@ -57,8 +59,6 @@ body {
     background-position: center;
 }
 
-
-  
 .background_image{
     background-image: url(/team21/assets/images/BackgroundSalad.jpg);
     background-size: cover;
@@ -73,21 +73,13 @@ body {
     padding-left: 5em;
 }
 
-
 .container2{
     padding-left: 16em;
     padding-right: 16em;
-} 
-
-.navbar-brand{
-   margin-left: 15em;
-   position: relative;
-    
 }
 
 main{
     position: relative;
-  
 }
 
 .description { /* what does position absolute do... */
@@ -97,52 +89,6 @@ main{
     /* transform: translate(-50%, -55%); */
 	text-align: left;
     margin-left: 8em;
-}
-
-h2 {
-margin-left: 50px;
-font-family: 'Poppins';
-font-style: normal;
-font-weight: 700;
-font-size: 32px;
-display: flex;
-align-items: center;
-text-align: center;
-letter-spacing: 0.1em;
-    
-color: #452E29;    
-text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-}
-.logo {
-    width: 420px;
-    height: 77px;
-    font-family: 'Inter';
-    font-style: normal;
-    font-weight: 800;
-    font-size: 40px;
-    text-align: center;
-
-    color: #452E29;
-
-    text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-/* Inside auto layout */
-    flex: none;
-    order: 0;
-    flex-grow: 0;
-
-    display: flex;
-    flex-direction: row;
-    
-    padding: 10px;
-    gap: 10px;
-    
-    position: absolute;
-    width: 220px;
-    height: 49px;
-    left: 198px;
-    top: 55px;
-    
-    filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
 }
 
 .button {
