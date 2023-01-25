@@ -67,16 +67,13 @@ body {
     background-color:#fff;
     position: relative;
     color: #452E29;
-    padding: 3em; 
-    
+    padding-left: 5em;
 }
 
 
 .container2{
-    padding: 6em;
     padding-left: 16em;
-    padding-right: 16em;
-
+    padding-right: 1em;
 } 
 
 .navbar-brand{
