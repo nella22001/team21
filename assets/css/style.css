@@ -15,21 +15,15 @@ body {
     height: 15em;
 }
 
-.nav-link,
 .navbar-brand {
-    color: rgb(185, 106, 106);
+    color: #452E29;
     cursor: pointer;
     margin-left: 5em;
-    width: 60%;
-}
-.navbar-brand {
-    color: #fff;
-    cursor: pointer;
-    margin-left: 15em;
-    positin: relative;
+    position: relative;
 }
 
 .nav-link {
+    color: #452e29;
     margin-right: 5em;
     background-color:  #F4E9E9;
     border-radius: 3em;
@@ -84,7 +78,6 @@ main{
     width: 130px;
     border: none;
     font-size: 16px;
-    font-weight: bold;
     color: #452E29;
     text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.25);
     padding: 2px 10px;
