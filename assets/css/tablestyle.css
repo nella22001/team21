@@ -1,16 +1,17 @@
 body{
     text-align: center;
+    color: #452e29;
     
 }
 
 table {
     border-spacing: 100px;
-    
+    color: #452e29;
   }
 
 td {
     text-align: center;
-    
+    color: #452e29;
   }
 
   .center {
