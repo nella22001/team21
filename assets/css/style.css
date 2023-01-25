@@ -64,10 +64,20 @@ body {
 }
 
 .container1{
-    background-color:#ffffff;
+    background-color:#fff;
     position: relative;
     color: #452E29;
+    padding: 3em; 
+    
 }
+
+
+.container2{
+    padding: 6em;
+    padding-left: 16em;
+    padding-right: 16em;
+
+} 
 
 .navbar-brand{
    margin-left: 15em;
@@ -77,6 +87,8 @@ body {
 
 main{
     position: relative;
+    padding: auto;
+    
 }
 
 .description { /* what does position absolute do... */
