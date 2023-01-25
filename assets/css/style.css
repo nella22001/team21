@@ -20,11 +20,14 @@ body {
     height: 15em;
 }
 
+
+
 .nav-link,
 .navbar-brand {
     color: rgb(185, 106, 106);
     cursor: pointer;
     margin-left: 5em;
+    width: 60%;
 }
 .navbar-brand {
     color: #fff;
