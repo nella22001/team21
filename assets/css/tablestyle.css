@@ -1,0 +1,16 @@
+body{
+    text-align: center;
+}
+
+table {
+    border-spacing: 100px;
+  }
+
+td {
+    text-align: center;
+  }
+
+  .center {
+    margin-left: auto;
+    margin-right: auto;
+  }

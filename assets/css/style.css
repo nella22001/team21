@@ -64,18 +64,11 @@ body {
 }
 
 .container1{
-    background-color: #fff;
+
+    background-color:#ffffff;
     position: relative;
-   color: rgba(69, 46, 41, 1);
-   
-}
+    color: #452E29;
 
-.container2{
-    background-color: #fff;
-}
-
-.col{
-    background-color: #fff;
 }
 
 .navbar-brand{
@@ -86,5 +79,84 @@ body {
 
 main{
     position:relative;
+}
+
+.description { /* what does position absolute do... */
+	left: 2em;
+	top: 20em;
+    position: absolute;
+    /* transform: translate(-50%, -55%); */
+	text-align: left;
+    margin-left: 8em;
+}
+
+.description h2 {
+margin-left: 50px;
+font-family: 'Poppins';
+font-style: normal;
+font-weight: 700;
+font-size: 32px;
+display: flex;
+align-items: center;
+text-align: center;
+letter-spacing: 0.1em;
+    
+color: #452E29;    
+text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+.logo {
+    width: 420px;
+    height: 77px;
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 800;
+    font-size: 40px;
+    text-align: center;
+
+    color: #452E29;
+
+    text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+/* Inside auto layout */
+    flex: none;
+    order: 0;
+    flex-grow: 0;
+
+    display: flex;
+    flex-direction: row;
+    
+    padding: 10px;
+    gap: 10px;
+    
+    position: absolute;
+    width: 220px;
+    height: 49px;
+    left: 198px;
+    top: 55px;
+    
+    filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+}
+
+.button {
+    background-color: #F4E9E9;
+    margin-left: 10px;
+    margin-right: 10px;
+    line-height: 20px;
+    width: 100px;
+    border: none;
+    font-size: 14px;
+    font-weight: bold;
+    color: #452E29;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.25);
+    padding: 1px 10px;
+    text-align: center;
+    display: inline-block;
+    margin: 2px 2px;
+    cursor: pointer;
+    border-radius: 20px;
+    box-shadow: 1px 1px 4px rgba(0, 0, 0, 0.25);
+}
+
+.button:hover {
+    background-color: #d4c5c5;
 }
 
