@@ -1,26 +1,19 @@
-
 .header {
-    background-color: rgb(167, 142, 109); 
     background-size: cover;
     background-position: center;
-    position: relative;
     width: 100%;
-    height: 200px;
-    background-attachment: fixed;
-    
+    height: 0px;
+    background-position: center;
 }
 
 body {
     padding: 0;
     margin: 0;
-    background: rgba(255, 255, 255, 1);
-    
+    background: rgba(255, 255, 255, 1);  
 }
 .navbar {
     height: 15em;
 }
-
-
 
 .nav-link,
 .navbar-brand {
@@ -49,14 +42,6 @@ body {
 }
 .navbar-collapse {
     justify-content: flex-end;
-}
-
-.header {
-    background-size: cover;
-    background-position: center;
-    width: 100%;
-    height: 0px;
-    background-position: center;
 }
 
 .background_image{
