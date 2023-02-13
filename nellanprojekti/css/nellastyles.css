@@ -22,7 +22,7 @@ body {
 
 .nav-link,
 .navbar-brand {
-    color: rgb(185, 106, 106);
+    color: rgb(186, 107, 107);
     cursor: pointer;
     margin-left: 5em;
 }
@@ -79,3 +79,14 @@ main{
 
     height: 200px; 
 }
+
+figcaption {
+    font-size: large;
+    font-weight: 500;
+    margin-left: 0.5em;
+}
+
+p {
+    font-weight: 300;
+}
+
