@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rekisteröi käyttäjätunnuksesi</title>
+</head>
+<body>
+    <!--käyttäjä rekisteröi itselle tunnuksen ja salasanan-->
+    <h2>Please fill in the information to register!</h2>
+    <!-- tällä lomakkeella viedään tiedot ohjelmalle rekisteroi.php-->
+    <form action="rekisteroi.php" method="post"> <!--sisältö viedään postina-->
+        <label for="etunimi">Your first name:</label><br>
+        <input type="text" name="etunimi" value=""><br>
+
+        <label for="sukunimi">Your last name</label><br>
+        <input type="text" name="sukunimi" value=""><br>
+
+        <label for="tunnus">Choose your username:</label><br>
+        <input type="text" name="tunnus" value=""><br>
+
+        <label for="salasana">Choose your password:</label><br>
+        <input type="password" name="salasana" value=""><br>
+
+        <label for="salasana2">Write your password again:</label><br>
+        <input type="password" name="salasana2" value=""><br>
+
+        <input type="submit" name="ok" value="Submit"><br>
+        <!--tänne viimeiseen ehkä joku onclick="document.location='registration.php'"? olisko tarpeellista?-->
+    </form>
+</body>
+</html>
