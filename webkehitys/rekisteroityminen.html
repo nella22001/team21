@@ -31,11 +31,21 @@
    <hr>
    
    <form action='rekisteroidy.php' method='post'>
-    Username: <input type='text' name='tunnus' value=''><br>
-    Password: <input type='password' name='salasana' value=''><br>
-    Repeat password: <input type='passwordagain' name='salasanauudestaan' value=''><br>
-    First name: <input type='text' name='etunimi' value=''><br>
-    Last name: <input type='text' name='sukunimi' value=''><br>
+    <label for='etunimi'>Your first name:</label><br>
+    <input type='text' name='etunimi' value=''><br>
+
+    <label for='sukunimi'>Your last name:</label><br>
+    <input type='text' name='sukunimi' value=''><br>
+
+    <label for='tunnus'>Choose your username:</label><br>
+    <input type='text' name='tunnus' value=''><br>
+
+    <label for='salasana'>Choose your password:</label><br>
+    <input type='password' name='salasana' value=''><br>
+
+    <label for='salasana2'>Write your password again:</label><br>
+    <input type='password' name='salasana2' value=''><br>
+
     <input type='submit' name='ok' value='OK'><br>
 
     <div class="container signin">
