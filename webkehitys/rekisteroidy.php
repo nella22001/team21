@@ -14,7 +14,7 @@ else{
     exit;
 }
 
-$yhteys=mysqli_connect("db", "root", "password");
+$yhteys=mysqli_connect("db", "erika", "projekti");
 $tietokanta=mysqli_select_db($yhteys, "reseptikanta");
 $sql="insert into kayttaja values(?, md5(?), ?, ?)";
 $stmt=mysqli_prepare($yhteys, $sql);
