@@ -6,7 +6,7 @@ if (isset($_POST["tunnus"]) && isset($_POST["salasana"]) &&
     //$salasana2=$_POST["salasana2"]; //tarvitaanko tätä riviä? tai haittaako se, kun ei ole tietokannassa salasana2 eikä sitä sinne haluta?
     $etunimi=$_POST["etunimi"];
     $sukunimi=$_POST["sukunimi"];
-    if($salasana != $salasana2) die('Passwords do not match!');
+    //if($salasana != $salasana2) die('Passwords do not match!');
 }
 else{
     header("Location:./webkehitys/rekisteroityminen.html");
