@@ -22,7 +22,7 @@
     Username: <input type='text' name='tunnus' value=''><br><br>
     Password: <input type='password' name='salasana' value=''><br><br>   
     <input type='submit' name='ok' value='Log in'><br><br>
-    <p>You do not have account? Create account <a href=rekisteroityminen.html>here</a></p>
+    <p>Don't have an account yet? Create your account <a href=rekisteroityminen.html>here</a></p>
    
 </form>  
    
