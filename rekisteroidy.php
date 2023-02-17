@@ -15,7 +15,7 @@ else{
     // tai tulosta print "Sorry, some information is missing or the username $tunnus is already registered. Please try again." Pitää vielä testata
     exit;
 }
-
+}
 $yhteys=mysqli_connect("db", "erika", "projekti");
 if (!$yhteys) {
     die ("Failed to make a connection: " . mysqli_connect_error());
