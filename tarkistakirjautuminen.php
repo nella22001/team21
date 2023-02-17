@@ -2,7 +2,7 @@
 session_start();
 if (isset($_POST["tunnus"]) && isset($_POST["salasana"])){
     $tunnus=$_POST["tunnus"];
-    $salasana=$_POST["salasana"]
+    $salasana=$_POST["salasana"];
 }
 else{
     header("Location:rekisteroityminen.html");
