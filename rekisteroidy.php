@@ -3,7 +3,7 @@ if (isset($_POST["tunnus"]) && isset($_POST["salasana"]) &&
     isset($_POST["etunimi"]) && isset($_POST["sukunimi"])){
     $tunnus=$_POST["tunnus"];
     $salasana=$_POST["salasana"];
-    //$salasana2=$_POST["salasana2"]; //tarvitaanko tätä riviä? tai haittaako se, kun ei ole tietokannassa salasana2 eikä sitä sinne haluta?
+    $salasana2=$_POST["salasana2"]; //tarvitaanko tätä riviä? tai haittaako se, kun ei ole tietokannassa salasana2 eikä sitä sinne haluta?
     $etunimi=$_POST["etunimi"];
     $sukunimi=$_POST["sukunimi"];
     if($salasana != $salasana2) {
