@@ -3,8 +3,6 @@
 <head>
     <meta charset="UTF-8">
     <title>Log in</title>
-</head>
-<body>
     <style>
         h2{text-align: center;
         margin-top: 250px;}
@@ -13,6 +11,8 @@
        
     
     </style>
+</head>
+<body>
     <?php
    
     print "<h2>Log in</h2>";
