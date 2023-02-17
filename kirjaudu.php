@@ -22,8 +22,8 @@
 <body>
    
     <?php
-   
-    print "<h2>Log in</h2>";
+       print "<h2>Log in</h2>";
+
     ?>
     
     <form action='tarkistakirjautuminen.php' method='post'>
