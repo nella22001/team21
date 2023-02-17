@@ -9,10 +9,10 @@ else{
     exit;
 }
 
-$yhteys=mysqli_connect("db", "pena ", "kukkuu");
-$tietokanta=mysqli_select_db($yhteys, "poj_userdata");
+$yhteys=mysqli_connect("db", "erika", "projekti");
+$tietokanta=mysqli_select_db($yhteys, "reseptikanta");
 
-$sql="select * from poj_users where tunnus=? and salasana=md5(?)";
+$sql="select * from reseptikanta where tunnus=? and salasana=md5(?)";
 $stmt=mysqli_prepare($yhteys, $sql);
 mysqli_stmt_bind_param($stmt, "ss", $tunnus, $salasana);
 mysqli_execute($stmt);
