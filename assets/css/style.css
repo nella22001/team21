@@ -124,17 +124,3 @@ a:hover {
 .round {
     border-radius: 20px;
 }
-
-/* rekisteroityminen.html*/
-p{
-    text-align: center;
-}
-form{
-    width:230px;
-    text-align: center; 
-    margin: 0 auto; 
-
-}
-body{
-    text-align: center;
-} 
