@@ -39,7 +39,7 @@ body {
 }
 
 .background_image{
-    background-image: url(assets/images/BackgroundSalad.jpg);
+    background-image: url(/team21/assets/images/BackgroundSalad.jpg);
     background-size: cover;
     background-attachment: fixed;
     background-position: center;
