@@ -17,7 +17,7 @@ catch(Exception $e){
     exit;
 }
 
-$tulos=mysqli_query($yhteys, "select * from koira where nimi=$nimi"); //lukee yhden ainoan reseptin
+$tulos=mysqli_query($yhteys, "select * from reseptit where nimi=$nimi"); //lukee yhden ainoan reseptin
 if ($rivi=mysqli_fetch_object($tulos)) { 
     $reseptit=new class{}; //tehdään uusi olio
     $reseptit->nimi=$rivi->nimi; //sarakkeen nimet samoin kuin tietokannassa, esim iso alkukirjain
