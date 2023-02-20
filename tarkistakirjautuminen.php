@@ -9,7 +9,7 @@ else{
     exit;
 }
 
-$yhteys=mysqli_connect("db", "erika", "projekti");
+$yhteys=mysqli_connect("db", "root", "password");
 $tietokanta=mysqli_select_db($yhteys, "reseptikanta");
 
 $sql="select * from reseptikanta where tunnus=? and salasana=md5(?)";
