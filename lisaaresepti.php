@@ -1,3 +1,12 @@
+<?php
+session_start();
+//tutkitaan, onko olemassa käynnissäolevaa kirjautumista
+if (!isset($_SESSION["user_ok"])){ //jos sessioniin ei ole laitettu sellaista user ok arvoa, käyttäjä ei ole kirjautunut
+	$_SESSION["paluuosoite"]="lisaaresepti.php"; //laitetaan sessioon talteen, minne oltiin menossa
+	header("Location:kirjaudu.html"); //ohjataan käyttäjä kirjautumaan
+	exit;
+}
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -71,32 +80,21 @@
     <br>
     <br>
     <br>
-   <h2>Register</h2> 
-   <p>Please fill in this form to create an account.</p>
+   <h2>Add your recipe here</h2> 
+   <p>Fill out all the fields to add your recipe.</p>
    
    
-   <form action='rekisteroidy.php' method='post'>
-    <label for='etunimi'>Your first name:</label><br>
-    <input type='text' name='etunimi' value=''><br>
+   <form action='uusiresepti.php' method='post'>
+    <label for='nimi'>Name of the recipe:</label><br>
+    <input type='text' name='nimi' value=''><br>
 
-    <label for='sukunimi'>Your last name:</label><br>
-    <input type='text' name='sukunimi' value=''><br>
+    <label for='ainekset'>Ingredients:</label><br>
+    <textarea name='ainekset' cols='70' rows='15'></textarea><br><br>
 
-    <label for='tunnus'>Choose your username:</label><br>
-    <input type='text' name='tunnus' value=''><br>
-
-    <label for='salasana'>Choose your password:</label><br>
-    <input type='password' name='salasana' value=''><br>
-
-    <label for='salasana2'>Write your password again:</label><br>
-    <input type='password' name='salasana2' value=''><br>
+    <label for='ohje'>Cooking instructions:</label><br>
+    <textarea name='ohje' cols='70' rows='15'></textarea><br><br>
 
     <input type='submit' name='ok' value='OK'><br>
-
-    <div class="container signin">
-    <p>Already have an account? <a href="kirjaudu.html">Sign in</a></p>
-    </div>
-
    </form>
    <br>
    <br>
