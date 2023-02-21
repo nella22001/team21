@@ -36,7 +36,7 @@ $sql="insert into reseptit (nimi, ainekset, ohje) values(?, ?, ?)";
 //Valmistellaan sql-lause
 $stmt=mysqli_prepare($yhteys, $sql);
 //Sijoitetaan muuttujat oikeisiin paikkoihin
-mysqli_stmt_bind_param($stmt, 'sss', $reseptit->nimi, $reseptit->ainekset; $reseptit->ohje);
+mysqli_stmt_bind_param($stmt, 'sss', $reseptit->nimi, $reseptit->ainekset, $reseptit->ohje);
 }
 //Suoritetaan sql-lause
 mysqli_stmt_execute($stmt);
