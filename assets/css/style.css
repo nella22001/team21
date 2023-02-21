@@ -124,3 +124,14 @@ a:hover {
 .round {
     border-radius: 20px;
 }
+.sidenav {
+    height: 100%;
+    width: 160px; 
+    position: fixed; 
+    z-index: 1;
+    top: 0; 
+    left: 0;
+    background-color: #d4c5c5;
+    overflow-x: hidden;
+    padding-top: 20px;
+  }

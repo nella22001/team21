@@ -33,7 +33,7 @@ if (!$tietokanta) {
         <header class="page-header header container-fluid text-center">
          
          <nav class="navbar navbar-expand-md"> <!--navigation bar with a logo-->
-            <a href="index.html"><img class="navbar-brand" src="assets/images/RecipeWorld.png" alt="Recipe World Logo"></a>
+            <a href="index.html"><img class="navbar-brand" src="assets/images/RecipeWorld.png" alt="Recipe World Logo"style="margin-left:10em;"></a>
              <button class="navbar-toggler navbar-dark" type="button" data-toggle="collapse" data-target="#main-navigation">
                  <span class="navbar-toggler-icon"></span>
              </button>
@@ -53,6 +53,10 @@ if (!$tietokanta) {
                      </li>
                  </ul>
                  </div>
+                 <div class="sidenav">
+                <a href="#">Lisää resepti</a>
+                <a href="#">Poista resepti</a>
+              </div>
          </nav>
          </header>
          <br>
