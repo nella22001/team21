@@ -29,5 +29,5 @@ if ($rivi=mysqli_fetch_object($tulos)){ //jokin tulos löytyi
 else{ //tulosta ei löytynyt
     header("Location:kirjaudu.html"); //lähetetään käyttäjä uudestaan kirjautumaan
     exit;
-}
+} 
 ?>
