@@ -74,7 +74,7 @@ if (!$tietokanta) {
                         <br>
                         <br>
                         <?php
-                        $tulos=mysli_query($yhteys, "select etunimi from reseptikanta")
+                        $tulos=mysli_query($yhteys, "select tunnus from reseptikanta")
                         <span>Name:</span> echo $yhteys['tunnus'];
                         </?>
 
@@ -100,7 +100,9 @@ if (!$tietokanta) {
             </div>
         </div>
         
-
+        <?php
+mysql_close($yhteys); // Closing Connection with Server
+?>
 
         </div><!--background ends-->
 
