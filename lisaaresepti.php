@@ -1,3 +1,12 @@
+<?php
+session_start();
+//tutkitaan, onko olemassa käynnissäolevaa kirjautumista
+if (!isset($_SESSION["user_ok"])){ //jos sessioniin ei ole laitettu sellaista user ok arvoa, käyttäjä ei ole kirjautunut
+	$_SESSION["paluuosoite"]="lisaaresepti.php"; //laitetaan sessioon talteen, minne oltiin menossa
+	header("Location:kirjaudu.html"); //ohjataan käyttäjä kirjautumaan
+	exit;
+}
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -10,13 +19,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
     <link href="assets/css/style.css" rel="stylesheet" type="text/css">
-    <title>Registration</title>
-
-    </head>
-    <body>
-     <div class="background_image"><!--background-->   
-
-        <style>
+    <title>Recipe World - Add your repice</title>
+    <style>
             h2{
                 text-align: center;
                 color:#452e29 ;
@@ -34,6 +38,9 @@
                 text-align: center;
             } 
         </style>
+    </head>
+    <body>
+     <div class="background_image"><!--background-->   
     
     <header class="page-header header container-fluid text-center">
 
@@ -45,16 +52,16 @@
                 <div class="collapse navbar-collapse" id="main-navigation">
                     <ul class="navbar-nav">
                         <li class="nav-item">
-                            <a class="nav-link" href="https://nella22001.github.io/team21/kirjaudu.html">Sign in</a>
+                            <a class="nav-link" href="kirjaudu.html">Sign in</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="https://nella22001.github.io/team21/">Home</a>
+                            <a class="nav-link" href="index.html">Home</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="https://nella22001.github.io/team21/category.html">Recipes</a>
+                            <a class="nav-link" href="category.html">Recipes</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="https://nella22001.github.io/team21/contact.html">Contact</a>
+                            <a class="nav-link" href="contact.html">Contact</a>
                         </li>
                     </ul>
                     

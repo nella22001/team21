@@ -1,12 +1,15 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <meta name="author" content="Erika Mikonmaa, Heidi Nuust, Helmi Mikkola and Nella Järvenpää">
+    <meta name="description" content="Having trouble with what to cook for dinner? Welcome to the most comprehensive online recipe collection. Recipe world has all the recipes you could ever dream of and more.">
+    <meta name="keywords" content="recipe, food, chef, breakfast, lunch, dinner, vegan, paleo">
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="assets/css/styles.css" rel="stylesheet" type="text/css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
-    <title>My page</title>
+    <title>Recipe World - My page</title>
 </head>
 <body>
 
@@ -30,23 +33,24 @@ if (!$tietokanta) {
         <header class="page-header header container-fluid text-center">
          
          <nav class="navbar navbar-expand-md"> <!--navigation bar with a logo-->
-             <img class="navbar-brand" src="assets/images/logo.png" alt="Recipe World Logo" width="20%">
+            <a href="index.html"><img class="navbar-brand" src="assets/images/RecipeWorld.png" alt="Recipe World Logo"></a>
              <button class="navbar-toggler navbar-dark" type="button" data-toggle="collapse" data-target="#main-navigation">
                  <span class="navbar-toggler-icon"></span>
              </button>
              <div class="collapse navbar-collapse" id="main-navigation">
                  <ul class="navbar-nav">
                      <li class="nav-item">
-                        <a class="nav-link" href="https://nella22001.github.io/team21/kirjaudu.html">Sign in</a>
+                        <a class="nav-link" href="kirjaudu.html">Sign in</a>
                     </li>
-                         <a class="nav-link" href="https://nella22001.github.io/team21/">Home</a>
+                     <li class="navbar-item">
+                         <a class="nav-link" href="index.html">Home</a>
                      </li>
                      <li class="nav-item">
-                         <a class="nav-link" href="https://nella22001.github.io/team21/category.html">Recipes</a>
+                         <a class="nav-link" href="category.html">Recipes</a>
                      </li>
                      <li class="nav-item">
-                         <a class="nav-link" href="https://nella22001.github.io/team21/contact.html">Contact</a>
-                        </li>
+                         <a class="nav-link" href="contact.html">Contact</a>
+                     </li>
                  </ul>
                  </div>
          </nav>
@@ -73,18 +77,6 @@ if (!$tietokanta) {
                     </div>
                 </div>
             </div>
-        
-            <div class="container">
-                <div class="row">
-                    <div class="col">
-                        <br>
-                        <br>
-                        <p>email@email.com</p>
-                        <p>040 123 456 7</p>
-                        <p>Your country? adress? if needed?</p>
-                    </div>
-                </div>
-            </div>
         </div>
 
         <div class="parent-container d-flex">
@@ -103,6 +95,7 @@ if (!$tietokanta) {
                 </div>
             </div>
         </div>
+        
 
 
         </div><!--background ends-->

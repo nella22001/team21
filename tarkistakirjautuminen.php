@@ -1,5 +1,8 @@
 <?php
 session_start(); //session start lause mahdollistaa session olion käyttämisen
+if (!isset($_SESSION["paluuosoite"])){
+    $_SESSION["paluuosoite"]="profilepage.html";//ei ole paluuosoitetta ku nvast tultiin
+}
 if (isset($_POST["tunnus"]) && isset($_POST["salasana"])){
     $tunnus=$_POST["tunnus"];
     $salasana=$_POST["salasana"];
@@ -26,5 +29,5 @@ if ($rivi=mysqli_fetch_object($tulos)){ //jokin tulos löytyi
 else{ //tulosta ei löytynyt
     header("Location:kirjaudu.html"); //lähetetään käyttäjä uudestaan kirjautumaan
     exit;
-}
+} 
 ?>
