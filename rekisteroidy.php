@@ -8,11 +8,21 @@ if (isset($_POST["tunnus"]) && isset($_POST["salasana"]) &&
     $sukunimi=$_POST["sukunimi"];
     if($salasana != $salasana2) {
         die('Passwords do not match! Please try again!');
-        exit;
     }
+    if(empty($tunnus)){
+        echo "Please fill out username field."<br>;
+    }
+    if(empty($salasana || $salasana2)){
+        echo "Please fill out both password fields.";
+    }
+    if(empty($etunimi)){
+        echo "Please fill out firstname field.";
+    }
+    if(empty($sukunimi)){
+        echo "Please fill out lastname field.";   
+    }exit;
 }
 else{
-    // print "Tadaa"; debuggia
     header("Location:rekisteroityminen.html");
     // tai tulosta print "Sorry, some information is missing or the username $tunnus is already registered. Please try again." Pitää vielä testata
     exit;
