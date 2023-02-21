@@ -9,15 +9,20 @@ if (isset($_POST["tunnus"]) && isset($_POST["salasana"]) &&
     if($salasana != $salasana2) {
         die('Passwords do not match! Please try again!');
     }
+    print "<table border='0'>";
+    print "<tr><td>";
     if(empty($tunnus)){
-        echo "Please fill out username field."<br>;
+        echo "Please fill out username field.";
     }
+    print "<tr><td>";
     if(empty($salasana || $salasana2)){
         echo "Please fill out both password fields.";
     }
+    print "<tr><td>";
     if(empty($etunimi)){
         echo "Please fill out firstname field.";
     }
+    print "<tr><td>";
     if(empty($sukunimi)){
         echo "Please fill out lastname field.";   
     }exit;
