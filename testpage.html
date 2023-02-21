@@ -54,11 +54,11 @@ function haeyksiresepti(indeksi) {
 }
 </script>
 
-<h2>Kerro tieto</h2>
+<h2>Lisää uusi tresepti täältä</h2>
 <form id='reseptilomake'>
-    Reseptin nimi: <input type='text' name='id' value='' placeholder='reseptin nimi...' ><br>
-    Ainekset: <input type='textarea' name='ainekset' value='' placeholder='ainekset...'><br>
-    Ohje: <input type='textarea' name='ohje' value='' placeholder='valmistusohje...'><br><br>
+    <input type='text' name='id' value='' placeholder='Reseptin nimi tähän...' ><br>
+    <input type='textarea' cols='70' rows='15' name='ainekset' value='' placeholder='Ainekset tähän...'><br>
+    <input type='textarea' cols='70' rows='15' name='ohje' value='' placeholder='Valmistusohje tähän...'><br><br>
 <input type='button' name='ok' value='Submit' onclick='lahetaResepti(this.form);'><br>
 </form>
 <button onclick="haeomatreseptit();">Näytä kaikki reseptit</button><br><br>
