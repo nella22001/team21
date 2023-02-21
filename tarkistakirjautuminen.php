@@ -12,7 +12,7 @@ else{
     exit;
 }
 
-$yhteys=mysqli_connect("db", "root", "password");
+$yhteys=mysqli_connect("db", "erika", "projekti");
 $tietokanta=mysqli_select_db($yhteys, "reseptikanta");
 
 $sql="select * from kayttaja where tunnus=? and salasana=md5(?)";
