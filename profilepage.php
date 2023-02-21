@@ -9,6 +9,21 @@
     <title>My page</title>
 </head>
 <body>
+
+    <?php>
+$yhteys=mysqli_connect("db", "erika", "projekti");
+if (!$yhteys) {
+    die ("Failed to create a connection: " . mysqli_connect_error());
+}
+$tietokanta=mysqli_select_db($yhteys, "reseptikanta");
+if (!$tietokanta) {
+    die ("Failed to connect to the right database: " . mysqli_connect_error());
+}
+ //Kyselyn tekeminen 
+ $tulos=mysqli_query($yhteys, "select * from reseptikanta");
+</?>
+
+
     
     <div class="background_image"><!--background-->
   
@@ -78,7 +93,11 @@
                     <div class="col" style="margin-left:5em; margin-top: 5em;">
                         <h4>My recipes</h4>
                         <br>
-                        <p>Here you will find the link to your recipe</p>
+                        <?php>
+                         $tulos=mysqli_query($yhteys, "select * from reseptit");
+                         <span>Name:</span> echo $yhteys['nimi'];
+
+</?>
                         <a href="https://nella22001.github.io/team21/recipe.html">Tom yum goong</a>
                     </div>
                 </div>
