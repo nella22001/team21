@@ -1,7 +1,7 @@
 <?php
 session_start(); //session start lause mahdollistaa session olion käyttämisen
 if (!isset($_SESSION["paluuosoite"])){
-    $_SESSION["paluuosoite"]="profilepage.html";//ei ole paluuosoitetta ku nvast tultiin
+    $_SESSION["paluuosoite"]="profilepage.html"; //ei ole paluuosoitetta kun vasta tultiin
 }
 if (isset($_POST["tunnus"]) && isset($_POST["salasana"])){
     $tunnus=$_POST["tunnus"];

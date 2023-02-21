@@ -1,3 +1,13 @@
+<?php
+session_start();
+//tutkitaan, onko olemassa käynnissäolevaa kirjautumista
+if (!isset($_SESSION["user_ok"])){ //jos sessioniin ei ole laitettu sellaista user ok arvoa, käyttäjä ei ole kirjautunut
+	$_SESSION["paluuosoite"]="profilepage.php"; //laitetaan sessioon talteen, minne oltiin menossa
+	header("Location:kirjaudu.html"); //ohjataan käyttäjä kirjautumaan
+	exit;
+}
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -13,7 +23,7 @@
 </head>
 <body>
 
-    <?php
+<?php
 $yhteys=mysqli_connect("db", "erika", "projekti");
 if (!$yhteys) {
     die ("Failed to create a connection: " . mysqli_connect_error());
@@ -24,7 +34,7 @@ if (!$tietokanta) {
 }
  //Kyselyn tekeminen 
  $tulos=mysqli_query($yhteys, "select * from reseptikanta");
-</?>
+?>
 
 
     
@@ -98,7 +108,7 @@ if (!$tietokanta) {
                          $tulos=mysqli_query($yhteys, "select * from reseptit");
                          <span>Name:</span> echo $yhteys['nimi'];
 
-</?>
+?>
                         <a href="https://nella22001.github.io/team21/recipe.html">Tom yum goong</a>
                     </div>
                 </div>
