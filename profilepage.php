@@ -13,7 +13,7 @@
 </head>
 <body>
 
-    <?php>
+    <?php
 $yhteys=mysqli_connect("db", "erika", "projekti");
 if (!$yhteys) {
     die ("Failed to create a connection: " . mysqli_connect_error());
@@ -73,7 +73,11 @@ if (!$tietokanta) {
                         <br>
                         <br>
                         <br>
-                        <h3>Your name should be here</h3>
+                        <?php
+                        $tulos=mysli_query($yhteys, "select etunimi from reseptikanta")
+                        <span>Name:</span> echo $yhteys['tunnus'];
+                        </?>
+
                     </div>
                 </div>
             </div>
@@ -85,7 +89,7 @@ if (!$tietokanta) {
                     <div class="col" style="margin-left:5em; margin-top: 5em;">
                         <h4>My recipes</h4>
                         <br>
-                        <?php>
+                        <?php
                          $tulos=mysqli_query($yhteys, "select * from reseptit");
                          <span>Name:</span> echo $yhteys['nimi'];
 
