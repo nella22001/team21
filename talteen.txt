@@ -1,0 +1,28 @@
+
+// $json=isset($_POST["reseptit"]) ? $_POST["reseptit"] : "";
+
+//if (!($reseptit=tarkistaJson($json))){ //jos ehdot täyttyy, tulee olio, mikä palautetaan
+//    print "Fill out all the fields, some information is missing!"; // jos tulee false
+//    exit;
+//}
+
+//if (isset($reseptit->nimi) && !empty($reseptit->nimi)) { //jos on annettu parametri nimi ja se ei ole tyhjä, tehdään päivitys
+  //   $sql="update reseptit set ainekset=?, ohje=? where nimi=?";
+   //  $stmt=mysqli_prepare($yhteys, $sql);
+    // mysqli_stmt_bind_param($stmt, 'sss', $reseptit->ainekset, $reseptit->ohje, $reseptit->nimi);
+ //}
+//else { //tai tehdään lisäys
+
+<?php
+function tarkistaJson($json){
+    if (empty($json)){
+        return false;
+    }
+    $reseptit=json_decode($json, false);
+    if (empty($reseptit->nimi) || empty($reseptit->ainekset) || empty($reseptit->ohje) ){
+        return false;
+    }
+    return $reseptit;
+}
+//print "Paluupostina jsonia ".$json;
+?>
