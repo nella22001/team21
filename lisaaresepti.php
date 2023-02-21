@@ -92,7 +92,7 @@ if (!isset($_SESSION["user_ok"])){ //jos sessioniin ei ole laitettu sellaista us
     <label for='ohje'>Cooking instructions:</label><br>
     <textarea name='ohje' cols='70' rows='15'></textarea><br><br>
 
-    <input type='submit' name='ok' value='OK'><br>
+    <input type='submit' name='ok' value='Submit'><br>
    </form>
    <br>
    <br>

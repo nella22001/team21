@@ -13,7 +13,7 @@ if (isset($_POST["nimi"]) && isset($_POST["ainekset"]) && isset($_POST["ohje"]))
     $ohje=$_POST["ohje"];
 }
 else {
-    print "Please fill out all the fields!"
+    print "Please fill out all the fields!";
 }
 
 //mysqli_report(MYSQLI_REPORT_ALL ^ MYSQLI_REPORT_INDEX);
