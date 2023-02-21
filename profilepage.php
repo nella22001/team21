@@ -54,8 +54,9 @@ if (!$tietokanta) {
                  </ul>
                  </div>
                  <div class="sidenav">
-                <a href="#">Lisää resepti</a>
-                <a href="#">Poista resepti</a>
+                <a href="#">Add a recipe</a>
+                <a href="#">Change recipes</a>
+                <a href="#">Delete recipes</a>
               </div>
          </nav>
          </header>
