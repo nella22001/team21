@@ -52,7 +52,7 @@ function tarkistaJson($json){
         return false;
     }
     $reseptit=json_decode($json, false);
-    if (empty($reseptit->nimi) || empty($reseptit->ainekset) || empty($reseptit->ohje) ){
+    if (empty($reseptit->nimi) || empty($reseptit->ainekset) || empty($reseptit->ohje)){
         return false;
     }
     return $respetit;
