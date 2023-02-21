@@ -6,10 +6,11 @@ if (isset($_POST["tunnus"]) && isset($_POST["salasana"]) &&
     $salasana2=$_POST["salasana2"]; //salasana2 tarvitaan täällä, jotta voisi tarkistaa salasana=salasana2, mutta se ei mene tietokantaan
     $etunimi=$_POST["etunimi"];
     $sukunimi=$_POST["sukunimi"];
+    // Erroreiden tarkistusta, jos salasana ei täsmää tai jotain kenttää ei täytetä. 
     if($salasana != $salasana2) {
         die('Passwords do not match! Please try again!');
     }
-    print "<table border='0'>";
+    echo "Registration failed: ";
     print "<tr><td>";
     if(empty($tunnus)){
         echo "Please fill out username field.";
