@@ -83,9 +83,7 @@ if (!isset($_SESSION["user_ok"])){ //jos sessioniin ei ole laitettu sellaista us
                                                     die ("Failed to connect to the right database: " . mysqli_connect_error());
                                                 }
                      $tulos=mysqli_query($yhteys, "select * from kayttaja");
- while ($rivi=mysqli_fetch_object($tulos)){
     echo $_SESSION['tunnus'];
-}
                         ?>
 
                     </div>
