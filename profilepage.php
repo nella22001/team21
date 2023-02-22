@@ -1,3 +1,13 @@
+<?php
+session_start();
+//tutkitaan, onko olemassa käynnissäolevaa kirjautumista
+if (!isset($_SESSION["user_ok"])){ //jos sessioniin ei ole laitettu sellaista user ok arvoa, käyttäjä ei ole kirjautunut
+	$_SESSION["paluuosoite"]="profilepage.php"; //laitetaan sessioon talteen, minne oltiin menossa
+	header("Location:kirjaudu.html"); //ohjataan käyttäjä kirjautumaan
+	exit;
+}
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -13,7 +23,7 @@
 </head>
 <body>
 
-    <?php
+<?php
 $yhteys=mysqli_connect("db", "erika", "projekti");
 if (!$yhteys) {
     die ("Failed to create a connection: " . mysqli_connect_error());
@@ -24,7 +34,7 @@ if (!$tietokanta) {
 }
  //Kyselyn tekeminen 
  $tulos=mysqli_query($yhteys, "select * from reseptikanta");
-/?>
+?>
 
 
     
@@ -54,9 +64,9 @@ if (!$tietokanta) {
                  </ul>
                  </div>
                  <div class="sidenav">
-                <a href="#">Add a recipe</a>
-                <a href="#">Change recipes</a>
-                <a href="#">Delete recipes</a>
+                <a href="lisaaresepti.php"><button class="button">Add a recipe</button></a>
+                <a href="#"><button class="button">Change recipes</button></a>
+                <a href="#"><button class="button">Delete recipes</button></a>
               </div>
          </nav>
          </header>
@@ -81,7 +91,7 @@ if (!$tietokanta) {
                         <?php
                         $tulos=mysli_query($yhteys, "select tunnus from reseptikanta")
                         <span>Name:</span> echo $yhteys['tunnus'];
-                        /?>
+                        ?>
 
                     </div>
                 </div>
@@ -98,7 +108,7 @@ if (!$tietokanta) {
                          $tulos=mysqli_query($yhteys, "select * from reseptit");
                          <span>Name:</span> echo $yhteys['nimi'];
 
-/?>
+?>
                         <a href="https://nella22001.github.io/team21/recipe.html">Tom yum goong</a>
                     </div>
                 </div>
@@ -109,6 +119,7 @@ if (!$tietokanta) {
 mysql_close($yhteys); // Closing Connection with Server
 ?>
 
+<a href="kirjauduulos.php">Sign out</a>
         </div><!--background ends-->
 
         <script src="https://code.jquery.com/jquery-3.5.1.min.js" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
