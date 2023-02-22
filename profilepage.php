@@ -24,7 +24,7 @@ if (!$tietokanta) {
 }
  //Kyselyn tekeminen 
  $tulos=mysqli_query($yhteys, "select * from reseptikanta");
-</?>
+/?>
 
 
     
@@ -81,7 +81,7 @@ if (!$tietokanta) {
                         <?php
                         $tulos=mysli_query($yhteys, "select tunnus from reseptikanta")
                         <span>Name:</span> echo $yhteys['tunnus'];
-                        </?>
+                        /?>
 
                     </div>
                 </div>
@@ -98,7 +98,7 @@ if (!$tietokanta) {
                          $tulos=mysqli_query($yhteys, "select * from reseptit");
                          <span>Name:</span> echo $yhteys['nimi'];
 
-</?>
+/?>
                         <a href="https://nella22001.github.io/team21/recipe.html">Tom yum goong</a>
                     </div>
                 </div>
