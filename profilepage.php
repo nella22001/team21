@@ -82,8 +82,11 @@ if (!isset($_SESSION["user_ok"])){ //jos sessioniin ei ole laitettu sellaista us
                                                 if (!$tietokanta) {
                                                     die ("Failed to connect to the right database: " . mysqli_connect_error());
                                                 }
-                     $tulos=mysqli_query($yhteys, "select * from kayttaja");
-                     if (isset($_SESSION['tunnus'])) :
+                                                
+                                                $tulos=mysqli_query($yhteys, "select * from kayttaja");
+                                                ?>
+                     <?php  if (isset($_SESSION['tunnus'])) : ?>
+                     <?php
     echo $_SESSION['tunnus'];
                         ?>
 
@@ -115,6 +118,6 @@ if (!isset($_SESSION["user_ok"])){ //jos sessioniin ei ole laitettu sellaista us
 
         <script src="https://code.jquery.com/jquery-3.5.1.min.js" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
-
+        <?php endif ?>
     </body>
 </html>
