@@ -73,12 +73,6 @@ if (!$tietokanta) {
          <br>
          <br>
          <br>
-         <?php
-                     $tulos=mysqli_query($yhteys, "select * from reseptikanta");
- while ($rivi=mysqli_fetch_object($tulos)){
-    print "$rivi->tunnus<br>\n";
-}
-                        ?>
          <br>
          <br>
          <br>
