@@ -71,7 +71,7 @@
 <?php
 if($error);
     //<script>
-    alert ("Wrong username or password, try again!")
+    alert ("Wrong username or password, try again!");
     //</script>
 ?>
     
