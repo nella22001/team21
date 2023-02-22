@@ -69,8 +69,10 @@
     </script>
 
 <?php
-if($error)
-    <script> alert ("Wrong username or password, try again!")</script>
+if($error);
+    //<script>
+    alert ("Wrong username or password, try again!")
+    //</script>
 ?>
     
 <br>
