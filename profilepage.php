@@ -110,10 +110,6 @@ if (!isset($_SESSION["user_ok"])){ //jos sessioniin ei ole laitettu sellaista us
                 </div>
             </div>
         </div>
-        
-        <?php
-mysql_close($yhteys); // Closing Connection with Server
-?>
 
 <a href="kirjauduulos.php">Sign out</a>
         </div><!--background ends-->
