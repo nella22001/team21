@@ -36,4 +36,7 @@ mysqli_stmt_bind_param($stmt, 'sss', $nimi, $ainekset, $ohje);
 mysqli_stmt_execute($stmt);
 //Suljetaan tietokantayhteys
 mysqli_close($yhteys);
+
+header("Location:profilepage.php");
+exit;
 ?>
