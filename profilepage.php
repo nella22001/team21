@@ -87,7 +87,7 @@ if (!isset($_SESSION["user_ok"])){ //jos sessioniin ei ole laitettu sellaista us
                         }
                      $tulos=mysqli_query($yhteys, "select * from reseptikanta");
  while ($rivi=mysqli_fetch_array($tulos)){
-    ehco ['tunnus'];
+    echo ['tunnus'];
 }
                         ?>
 
