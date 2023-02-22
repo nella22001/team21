@@ -50,7 +50,7 @@ if (!isset($_SESSION["user_ok"])){ //jos sessioniin ei ole laitettu sellaista us
                  </div>
                  <div class="sidenav">
                 <a href="lisaaresepti.php"><button class="button">Add a recipe</button></a>
-                <a href="#"><button class="button">Change recipes</button></a>
+                <a href="#"><button class="button">Edit recipes</button></a>
                 <a href="#"><button class="button">Delete recipes</button></a>
               </div>
          </nav>
@@ -76,19 +76,17 @@ if (!isset($_SESSION["user_ok"])){ //jos sessioniin ei ole laitettu sellaista us
                         <br>
                         <?php
                         $yhteys=mysqli_connect("db", "erika", "projekti");
-                                                if (!$yhteys) {
-                                                    die ("Failed to create a connection: " . mysqli_connect_error());
-                                                }
-                                                $tietokanta=mysqli_select_db($yhteys, "reseptikanta");
-                                                if (!$tietokanta) {
-                                                    die ("Failed to connect to the right database: " . mysqli_connect_error());
-                                                }
-                                                $tulos=mysqli_query($yhteys, "select * from kayttaja");
-                                                while ($rivi=mysqli_fetch_object($tulos)){
-                                                 print "<tr><td>$rivi->tunnus\n<br>";
-                                                }
-                                                
-                                                 
+                            if (!$yhteys) {
+                                die ("Failed to create a connection: " . mysqli_connect_error());
+                            }
+                             $tietokanta=mysqli_select_db($yhteys, "reseptikanta");
+                            if (!$tietokanta) {
+                                die ("Failed to connect to the right database: " . mysqli_connect_error());
+                            }
+                            $tulos=mysqli_query($yhteys, "select * from kayttaja");
+                            while ($rivi=mysqli_fetch_object($tulos)){
+                                print "<tr><td>$rivi->tunnus\n<br>";
+                            }                         
                         ?>
 
                     </div>
@@ -107,7 +105,7 @@ if (!isset($_SESSION["user_ok"])){ //jos sessioniin ei ole laitettu sellaista us
                          while ($rivi=mysqli_fetch_object($tulos)){
                             print "$rivi->nimi<br>\n";
                         }
-?>
+                        ?>
                         <a href="https://nella22001.github.io/team21/recipe.html">Tom yum goong</a>
                     </div>
                 </div>

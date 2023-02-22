@@ -59,14 +59,18 @@
     <h2>Log in</h2>
    
     <form action='tarkistakirjautuminen.php' method='post'>
-    Username: <input type='text' name='tunnus' value=''><br><br>
+    Username: <input id=kursori type='text' name='tunnus' value=''><br><br>
     Password: <input type='password' name='salasana' value=''><br><br>   
     <input type='submit' name='ok' value='Log in'><br><br>
     <p>You do not have an account? Create your account <a href=rekisteroityminen.html>here</a></p>
     </form>
-    <?php if($error){ ?>
+    <script>
+        kursori.focus();
+    </script>
+
+    <?php if($error) ?>
         <script> alert ("Wrong username or password, try again!")</script>
-      <?php } ?>
+      <?php ?>
     
 <br>
    <br>
