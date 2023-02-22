@@ -16,11 +16,16 @@ catch(Exception $e){
     exit;
 }
 
-$tulos=mysqli_query($yhteys, "select * from reseptit");
+$tulos=mysqli_query($yhteys, "select nimi from reseptit where tunnus is ?");
 print "<table border='1'>";
 while ($rivi=mysqli_fetch_object($tulos)) { 
     print "<tr>";
     print "<td>$rivi->nimi<td>$rivi->ainekset<td>$rivi->ohje<td><button onclick='haeomatreseptit($rivi->nimi);'>Muokkaa reseptia</button>";
 }
 print "</table>";
+
+//$tulos=mysqli_query($yhteys, "select nimi from reseptit");
+//while ($rivi=mysqli_fetch_object($tulos)) { 
+//    print "$rivi->nimi <button onclick='haeYksiResepti($rivi->id);'>Muokkaa</button>";
+//}
 ?>
