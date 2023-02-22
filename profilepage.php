@@ -90,9 +90,7 @@ if (!$tietokanta) {
                         <br>
                         <?php
                      $tulos=mysqli_query($yhteys, "select * from reseptikanta");
-                        while ($rivi=mysqli_fetch_object($tulos)) {
-                            print "$rivi->tunnus<br>";
-                        }
+                        echo $yhteys['tunnus'];
                         ?>
 
                     </div>
