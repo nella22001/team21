@@ -68,9 +68,10 @@
         kursori.focus();
     </script>
 
-    <?php if($error) ?>
-        <script> alert ("Wrong username or password, try again!")</script>
-      <?php ?>
+<?php
+if($error)
+    <script> alert ("Wrong username or password, try again!")</script>
+?>
     
 <br>
    <br>
