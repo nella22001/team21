@@ -89,7 +89,7 @@ if (!$tietokanta) {
                         <br>
                         <br>
                         <?php
-                     $tulos=mysqli_query($yhteys, "select * from reseptikanta");
+                        $tulos=mysqli_query($yhteys, "select * from reseptikanta");
                         echo $yhteys['tunnus'];
                         ?>
 
