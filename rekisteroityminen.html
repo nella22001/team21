@@ -23,6 +23,7 @@
             }
             p{
                 text-align: center;
+
             }
             form{
                 width:230px;
@@ -33,6 +34,9 @@
             body{
                 text-align: center;
             } 
+            span{
+                color: red;
+            }
         </style>
     
     <header class="page-header header container-fluid text-center">
@@ -73,23 +77,29 @@
     <br>
    <h2>Register</h2> 
    <p>Please fill in this form to create an account.</p>
-   
-   
+
+   <span class="error">* reguired field</span>
+
    <form action='rekisteroidy.php' method='post'>
     <label for='etunimi'>Your first name:</label><br>
-    <input type='text' name='etunimi' value=''><br>
-
+    <input type='text' name='etunimi' value=''>
+    <span class="error">*</span>
+    
     <label for='sukunimi'>Your last name:</label><br>
-    <input type='text' name='sukunimi' value=''><br>
+    <input type='text' name='sukunimi' value=''>
+    <span class="error">*</span>
 
     <label for='tunnus'>Choose your username:</label><br>
-    <input type='text' name='tunnus' value=''><br>
+    <input type='text' name='tunnus' value=''>
+    <span class="error">*</span>
 
     <label for='salasana'>Choose your password:</label><br>
-    <input type='password' name='salasana' value=''><br>
+    <input type='password' name='salasana' value=''>
+    <span class="error">*</span>
 
     <label for='salasana2'>Write your password again:</label><br>
-    <input type='password' name='salasana2' value=''><br>
+    <input type='password' name='salasana2' value=''>
+    <span class="error">*</span>
 
     <input type='submit' name='ok' value='OK'><br>
 
