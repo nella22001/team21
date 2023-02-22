@@ -23,8 +23,16 @@ if (!isset($_SESSION["user_ok"])){ //jos sessioniin ei ole laitettu sellaista us
 </head>
 <body>
 
-
-
+<?php>
+$yhteys=mysqli_connect("db", "erika", "projekti");
+                        if (!$yhteys) {
+                            die ("Failed to create a connection: " . mysqli_connect_error());
+                        }
+                        $tietokanta=mysqli_select_db($yhteys, "reseptikanta");
+                        if (!$tietokanta) {
+                            die ("Failed to connect to the right database: " . mysqli_connect_error());
+                        }
+                        ?>
     
     <div class="background_image"><!--background-->
   
@@ -77,14 +85,6 @@ if (!isset($_SESSION["user_ok"])){ //jos sessioniin ei ole laitettu sellaista us
                         <br>
                         <br>
                         <?php
-                        $yhteys=mysqli_connect("db", "erika", "projekti");
-                        if (!$yhteys) {
-                            die ("Failed to create a connection: " . mysqli_connect_error());
-                        }
-                        $tietokanta=mysqli_select_db($yhteys, "reseptikanta");
-                        if (!$tietokanta) {
-                            die ("Failed to connect to the right database: " . mysqli_connect_error());
-                        }
                      $tulos=mysqli_query($yhteys, "select * from kayttaja");
  while ($rivi=mysqli_fetch_object($tulos)){
     print "$rivi->tunnus<br>\n";
