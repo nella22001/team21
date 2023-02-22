@@ -1,12 +1,13 @@
 <?php
 session_start(); //session start lause mahdollistaa session olion käyttämisen
 if (!isset($_SESSION["paluuosoite"])){
-    $_SESSION["paluuosoite"]="profilepage.html"; //ei ole paluuosoitetta kun vasta tultiin
+    $_SESSION["paluuosoite"]="profilepage.php"; //ei ole paluuosoitetta kun vasta tultiin
 }
 if (isset($_POST["tunnus"]) && isset($_POST["salasana"])){
     $tunnus=$_POST["tunnus"];
     $salasana=$_POST["salasana"];
 }
+
 else{
     header("Location:kirjaudu.html");
     exit;

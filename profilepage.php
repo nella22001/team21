@@ -90,7 +90,7 @@ if (!$tietokanta) {
                         <br>
                         <?php
                         $tulos=mysli_query($yhteys, "select tunnus from reseptikanta")
-                        // <span>Name:</span> 
+                        //<span>Name:</span>
                         echo $yhteys['tunnus'];
                         ?>
 
@@ -107,7 +107,7 @@ if (!$tietokanta) {
                         <br>
                         <?php
                          $tulos=mysqli_query($yhteys, "select * from reseptit");
-                         // <span>Name:</span> 
+                         //<span>Name:</span>
                          echo $yhteys['nimi'];
 
 ?>
