@@ -32,8 +32,7 @@ $tietokanta=mysqli_select_db($yhteys, "reseptikanta");
 if (!$tietokanta) {
     die ("Failed to connect to the right database: " . mysqli_connect_error());
 }
- //Kyselyn tekeminen 
- $tulos=mysqli_query($yhteys, "select * from reseptikanta");
+
 ?>
 
 
@@ -89,8 +88,10 @@ if (!$tietokanta) {
                         <br>
                         <br>
                         <?php
-                        $tulos=mysqli_query($yhteys, "select * from reseptikanta");
-                        echo $yhteys['tunnus'];
+                     $tulos=mysqli_query($yhteys, "select * from reseptikanta");
+ while ($rivi=mysqli_fetch_object($tulos)){
+    print "$rivi->tunnus<br>\n";
+}
                         ?>
 
                     </div>
@@ -106,9 +107,9 @@ if (!$tietokanta) {
                         <br>
                         <?php
                          $tulos=mysqli_query($yhteys, "select * from reseptit");
-                         //<span>Name:</span>
-                         echo $yhteys['nimi'];
-
+                         while ($rivi=mysqli_fetch_object($tulos)){
+                            print "$rivi->nimi<br>\n";
+                        }
 ?>
                         <a href="https://nella22001.github.io/team21/recipe.html">Tom yum goong</a>
                     </div>
