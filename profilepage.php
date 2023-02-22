@@ -22,9 +22,6 @@ if (!isset($_SESSION["user_ok"])){ //jos sessioniin ei ole laitettu sellaista us
     <title>Recipe World - My page</title>
 </head>
 <body>
-
-
-
     
     <div class="background_image"><!--background-->
   
@@ -78,16 +75,16 @@ if (!isset($_SESSION["user_ok"])){ //jos sessioniin ei ole laitettu sellaista us
                         <br>
                         <?php
                         $yhteys=mysqli_connect("db", "erika", "projekti");
-                        if (!$yhteys) {
-                            die ("Failed to create a connection: " . mysqli_connect_error());
-                        }
-                        $tietokanta=mysqli_select_db($yhteys, "reseptikanta");
-                        if (!$tietokanta) {
-                            die ("Failed to connect to the right database: " . mysqli_connect_error());
-                        }
-                     $tulos=mysqli_query($yhteys, "select * from reseptikanta");
- while ($rivi=mysqli_fetch_array($tulos)){
-    echo $rivi['tunnus'];
+                                                if (!$yhteys) {
+                                                    die ("Failed to create a connection: " . mysqli_connect_error());
+                                                }
+                                                $tietokanta=mysqli_select_db($yhteys, "reseptikanta");
+                                                if (!$tietokanta) {
+                                                    die ("Failed to connect to the right database: " . mysqli_connect_error());
+                                                }
+                     $tulos=mysqli_query($yhteys, "select * from kayttaja");
+ while ($rivi=mysqli_fetch_object($tulos)){
+    print "$rivi->tunnus<br>\n";
 }
                         ?>
 
@@ -113,10 +110,6 @@ if (!isset($_SESSION["user_ok"])){ //jos sessioniin ei ole laitettu sellaista us
                 </div>
             </div>
         </div>
-        
-        <?php
-mysql_close($yhteys); // Closing Connection with Server
-?>
 
 <a href="kirjauduulos.php">Sign out</a>
         </div><!--background ends-->
