@@ -10,23 +10,27 @@ if (isset($_POST["tunnus"]) && isset($_POST["salasana"]) &&
     if($salasana != $salasana2) {
         die('Passwords do not match! Please try again!');
     }
-    echo "Registration failed: ";
+    //echo "Registration failed: ";
     print "<tr><td>";
     if(empty($tunnus)){
         echo "Please fill out username field.";
+        exit;
     }
     print "<tr><td>";
     if(empty($salasana || $salasana2)){
         echo "Please fill out both password fields.";
+        exit;
     }
     print "<tr><td>";
     if(empty($etunimi)){
         echo "Please fill out firstname field.";
+        exit;
     }
     print "<tr><td>";
     if(empty($sukunimi)){
-        echo "Please fill out lastname field.";   
-    }exit;
+        echo "Please fill out lastname field.";  
+        exit; 
+    }
 }
 else{
     header("Location:rekisteroityminen.html");
