@@ -78,11 +78,11 @@
    <h2>Register</h2> 
    <p>Please fill in this form to create an account.</p>
 
-   <span class="error">* reguired field</span><br><br><!--Käyttäjälle tieto *-merkillä että tämä kenttä on täytettävä rekisteröitymistä varten. --> 
+   <span class="error">* required field</span><br><br><!--Käyttäjälle tieto *-merkillä että tämä kenttä on täytettävä rekisteröitymistä varten. --> 
 
    <form action='rekisteroidy.php' method='post'>
     <label for='etunimi'>Your first name:</label><br>
-    <input type='text' name='etunimi' value=''>
+    <input id=kursori type='text' name='etunimi' value=''>
     <span class="error">*</span>
     
     <label for='sukunimi'>Your last name:</label><br>
@@ -101,13 +101,16 @@
     <input type='password' name='salasana2' value=''>
     <span class="error">*</span>
 
-    <input type='submit' name='ok' value='OK'><br>
+    <input type='submit' name='ok' value='Submit'><br>
 
     <div class="container signin">
     <p>Already have an account? <a href="kirjaudu.html">Sign in</a></p>
     </div>
 
    </form>
+   <script>
+        kursori.focus();
+   </script>
    <br>
    <br>
    <br>

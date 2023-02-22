@@ -84,7 +84,7 @@ if (!isset($_SESSION["user_ok"])){ //jos sessioniin ei ole laitettu sellaista us
    
    <form action='uusiresepti.php' method='post'>
     <label for='nimi'>Name of the recipe:</label><br>
-    <input type='text' name='nimi' value=''><br>
+    <input id=kursori type='text' name='nimi' value=''><br>
 
     <label for='ainekset'>Ingredients:</label><br>
     <textarea name='ainekset' cols='70' rows='15'></textarea><br><br>
@@ -94,6 +94,9 @@ if (!isset($_SESSION["user_ok"])){ //jos sessioniin ei ole laitettu sellaista us
 
     <input type='submit' name='ok' value='OK'><br>
    </form>
+   <script>
+        kursori.focus();
+   </script>
    <br>
    <br>
    <br>
