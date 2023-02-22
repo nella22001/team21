@@ -7,11 +7,7 @@ if (isset($_POST["tunnus"]) && isset($_POST["salasana"])){
     $tunnus=$_POST["tunnus"];
     $salasana=$_POST["salasana"];
 }
-echo "Login failed: ";
-print "<tr><td>";
-if(empty($tunnus || $salasana)){
-    echo "Wrong username or password, try again!";
-}
+
 else{
     header("Location:kirjaudu.html");
     exit;
