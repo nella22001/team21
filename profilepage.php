@@ -52,6 +52,7 @@ if (!isset($_SESSION["user_ok"])){ //jos sessioniin ei ole laitettu sellaista us
                 <a href="lisaaresepti.php"><button class="button">Add a recipe</button></a>
                 <a href="#"><button class="button">Edit recipes</button></a>
                 <a href="#"><button class="button">Delete recipes</button></a>
+                <a href="kirjauduulos.php"><button class="button">Sign out</button></a>
               </div>
          </nav>
          </header>
@@ -74,17 +75,17 @@ if (!isset($_SESSION["user_ok"])){ //jos sessioniin ei ole laitettu sellaista us
                         <br>
                         <br>
                         <?php
-                        print "<h2>Welcome, ".$_SESSION["user_ok"]."!</h2>";
+                        print "<h2>Welcome, username not here:(</h2>";
 
-                        $yhteys=mysqli_connect("db", "erika", "projekti");
-                        if (!$yhteys) {
-                            die ("Failed to create a connection: " . mysqli_connect_error());
-                        }
-                        $tietokanta=mysqli_select_db($yhteys, "reseptikanta");
-                        if (!$tietokanta) {
-                            die ("Failed to connect to the right database: " . mysqli_connect_error());
-                        }
-                        //$tulos=mysqli_query($yhteys, "select * from kayttaja");
+                        //$yhteys=mysqli_connect("db", "erika", "projekti");
+                        //f (!$yhteys) {
+                        //    die ("Failed to create a connection: " . mysqli_connect_error());
+                        //}
+                        //$tietokanta=mysqli_select_db($yhteys, "reseptikanta");
+                        //if (!$tietokanta) {
+                        //    die ("Failed to connect to the right database: " . mysqli_connect_error());
+                        //}
+                        //$tulos=mysqli_query($yhteys, "select * from kayttaja where tunnus=?");
                         //while ($rivi=mysqli_fetch_object($tulos)){
                         //    print "<tr><td>$rivi->tunnus\n<br>";
                         //}                         
@@ -113,7 +114,6 @@ if (!isset($_SESSION["user_ok"])){ //jos sessioniin ei ole laitettu sellaista us
             </div>
         </div>
 
-        <a href="kirjauduulos.php"><button class="button">Sign out</button></a>
         </div><!--background ends-->
 
         <script src="https://code.jquery.com/jquery-3.5.1.min.js" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
