@@ -6,7 +6,7 @@ session_start();
 //tutkitaan, onko olemassa käynnissäolevaa kirjautumista
 if (!isset($_SESSION["user_ok"])){ //jos sessioniin ei ole laitettu sellaista user ok arvoa, käyttäjä ei ole kirjautunut
 	$_SESSION["paluuosoite"]="vaatiikirjautumisen.php"; //laitetaan sessioon talteen, minne oltiin menossa
-	header("Location:kirjaudu.php"); //ohjataan käyttäjä kirjautumaan
+	header("Location:kirjaudu.html"); //ohjataan käyttäjä kirjautumaan
 	exit;
 }
 ?>
