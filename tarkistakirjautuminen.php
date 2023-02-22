@@ -1,6 +1,5 @@
 <?php
 session_start(); //session start lause mahdollistaa session olion käyttämisen
-$error = false;
 if (!isset($_SESSION["paluuosoite"])){
     $_SESSION["paluuosoite"]="profilepage.php"; //ei ole paluuosoitetta kun vasta tultiin
 }
@@ -23,6 +22,7 @@ mysqli_execute($stmt);
 $tulos=mysqli_stmt_get_result($stmt); //käytettiin selectiä ja prepared statementia, saadaan vastaus $tuloksella
 
 if ($rivi=mysqli_fetch_object($tulos)){ //jokin tulos löytyi
+    $error = false;
     $_SESSION["user_ok"]="ok";
     header("Location:".$_SESSION["paluuosoite"]); //kirjautuminen onnistui, ohjataan pyyntö sinne, minne oltiin alunperin menossa
     exit;
