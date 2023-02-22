@@ -63,8 +63,10 @@
     Password: <input type='password' name='salasana' value=''><br><br>   
     <input type='submit' name='ok' value='Log in'><br><br>
     <p>You do not have an account? Create your account <a href=rekisteroityminen.html>here</a></p>
-   
-</form>
+    </form>
+    <?php if($error){ ?>
+        <script> alert ("Wrong username or password, try again!")</script>
+      <?php } ?>
     
 <br>
    <br>
