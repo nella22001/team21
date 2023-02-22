@@ -85,9 +85,9 @@ if (!isset($_SESSION["user_ok"])){ //jos sessioniin ei ole laitettu sellaista us
                         if (!$tietokanta) {
                             die ("Failed to connect to the right database: " . mysqli_connect_error());
                         }
-                     $tulos=mysqli_query($yhteys, "select * from reseptikanta");
- while ($rivi=mysqli_fetch_array($tulos)){
-    echo $rivi['tunnus'];
+                     $tulos=mysqli_query($yhteys, "select * from kayttaja");
+ while ($rivi=mysqli_fetch_object($tulos)){
+    print "$rivi->tunnus<br>\n";
 }
                         ?>
 
