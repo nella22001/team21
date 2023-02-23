@@ -47,7 +47,7 @@ if (!isset($_SESSION["user_ok"])){ //jos sessioniin ei ole laitettu sellaista us
                          <a class="nav-link" href="contact.html">Contact</a>
                      </li>
                  </ul>
-                 </div>
+                 </div> <!--sivunavigointi reseptien lisäys,poisto, muokkaus aina kun ollaan omilla sivuilla-->
                  <div class="sidenav">
                 <a href="lisaaresepti.php"><button class="button">Add a recipe</button></a>
                 <a href="#"><button class="button">Change recipes</button></a>
@@ -65,7 +65,7 @@ if (!isset($_SESSION["user_ok"])){ //jos sessioniin ei ole laitettu sellaista us
          <br>
          <br>
          <br>
-         <br>
+         <br> <!--container josta löytyy käyttäjän tietoja, tässä tapauksessa nimi koska ei haluttu muuta-->
          <div class="parent-container d-flex" style="background-color: rgb(244, 233, 233);">
             <div class="container">
                 <div class="row">
@@ -94,7 +94,7 @@ if (!isset($_SESSION["user_ok"])){ //jos sessioniin ei ole laitettu sellaista us
                 </div>
             </div>
         </div>
-
+<!--Löytyy käyttäjän reseptit-->
         <div class="parent-container d-flex">
             <div class="container">
                 <div class="row">
@@ -107,6 +107,7 @@ if (!isset($_SESSION["user_ok"])){ //jos sessioniin ei ole laitettu sellaista us
                             print "$rivi->nimi<br>\n";
                         }
 ?>
+<!--Linkki suoraan olemassa olevaan reseptiin-->
                         <a href="https://nella22001.github.io/team21/recipe.html">Tom yum goong</a>
                     </div>
                 </div>
