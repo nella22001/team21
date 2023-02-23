@@ -67,7 +67,10 @@ if (!isset($_SESSION["user_ok"])){ //jos sessioniin ei ole laitettu sellaista us
                     
                 </div>
             </nav>
-    </header>   
+    </header>
+    <?php //sivunavigointi reseptien lisäys,poisto, muokkaus aina kun ollaan omilla sivuilla
+    include ("sidenav.html");
+    ?>  
     <br>
     <br>
     <br>
