@@ -12,6 +12,59 @@
     <title>Muokkaa reseptiä</title>
 </head>
 <body> <!--Tulostaa reseptit-->
+<div class="background_image"><!--background-->
+  
+  <header class="page-header header container-fluid text-center">
+   
+   <nav class="navbar navbar-expand-md"> <!--navigation bar with a logo-->
+      <a href="index.html"><img class="navbar-brand" src="assets/images/RecipeWorld.png" alt="Recipe World Logo"style="margin-left:10em;"></a>
+       <button class="navbar-toggler navbar-dark" type="button" data-toggle="collapse" data-target="#main-navigation">
+           <span class="navbar-toggler-icon"></span>
+       </button>
+       <div class="collapse navbar-collapse" id="main-navigation">
+           <ul class="navbar-nav">
+               <li class="nav-item">
+                  <a class="nav-link" href="kirjaudu.html">Sign in</a>
+              </li>
+               <li class="navbar-item">
+                   <a class="nav-link" href="index.html">Home</a>
+               </li>
+               <li class="nav-item">
+                   <a class="nav-link" href="category.html">Recipes</a>
+               </li>
+               <li class="nav-item">
+                   <a class="nav-link" href="contact.html">Contact</a>
+               </li>
+           </ul>
+           <br>
+         <br>
+         <br>
+         <br>
+         <br>
+         <br>
+         <br>
+         <br>
+         <br>
+         <br>
+           <div class="parent-container d-flex" style="background-color: rgb(244, 233, 233);">
+            <div class="container">
+                <div class="row">
+                    <div class="col" style="margin-left: 10em;">
+                        <br>
+                        <br>
+                        <br>
+                        <?php
+                        //if (isset($_SESSION["user_ok"])){
+                            $yhteys=mysqli_connect("db", "erika", "projekti");
+                            $tietokanta=mysqli_select_db($yhteys, "reseptikanta");
+                            $tulos=mysqli_query($yhteys, "select * from reseptit");
+                        print "<h2>Welcome, ".$_SESSION["user_ok"]."!</h2>";                        
+                        ?>
+
+                    </div>
+                </div>
+            </div>
+        </div>
 <div class="parent-container d-flex">
 <div class="container">
 <div class="row">
