@@ -32,9 +32,11 @@ $tulos=mysqli_stmt_get_result($stmt);
 //}
 ?>
 <form action='paivitaresepti.php' method='post'>
- <input type='text' name='id' value='<?php //print $rivi->id;?>' readonly><br> -->
-    <label for='nimi'>Name of the recipe:</label><br>
-    <input id=kursori type='text' name='nimi' value='<?php print $rivi->nimi;?>'><br>
+ <!-- <input type='text' name='id' value='<?php //print $rivi->nimi;?>' readonly><br> -->
+ <label for='nimi'>Name of the recipe:</label><br>
+<textarea name='nimi' cols='10' rows='10' value='<?php print $rivi->nimi;?>'></textarea><br><br>
+
+   <!-- <input id=kursori type='text' name='nimi' value='<?php //print $rivi->nimi;?>'><br> -->
 
     <label for='ainekset'>Ingredients:</label><br>
     <textarea name='ainekset' cols='70' rows='15' value='<?php print $rivi->ainekset;?>'></textarea><br><br>
