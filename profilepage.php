@@ -49,10 +49,9 @@ include ("sidenav.html");
                         <br>
                         <br>
                         <?php
-                        //if (isset($_SESSION["user_ok"])){
-                            $yhteys=mysqli_connect("db", "erika", "projekti");
-                            $tietokanta=mysqli_select_db($yhteys, "reseptikanta");
-                            $tulos=mysqli_query($yhteys, "select * from reseptit");
+                        $yhteys=mysqli_connect("db", "erika", "projekti");
+                        $tietokanta=mysqli_select_db($yhteys, "reseptikanta");
+                        $tulos=mysqli_query($yhteys, "select * from reseptit");
                         print "<h2>Welcome, ".$_SESSION["user_ok"]."!</h2>";                        
                         ?>
 
@@ -60,7 +59,7 @@ include ("sidenav.html");
                 </div>
             </div>
         </div>
-<!--Löytyy käyttäjän reseptit-->
+<!--Löytyy käyttäjän reseptit, tällä hetkellä VIRHEELLINEN, kaikkien käyttäjien reseptit-->
         <div class="parent-container d-flex">
             <div class="container">
                 <div class="row">
@@ -68,12 +67,11 @@ include ("sidenav.html");
                         <h4>My recipes</h4>
                         <br>
                         <?php
-                         $tulos=mysqli_query($yhteys, "select * from reseptit");
-                         while ($rivi=mysqli_fetch_object($tulos)){
-                            print "$rivi->nimi<br>\n";
+                        $tulos=mysqli_query($yhteys, "select * from reseptit");
+                        while ($rivi=mysqli_fetch_object($tulos)){
+                        print "$rivi->nimi<br>\n";
                         }
                         ?>
-                        <!--<a href="https://nella22001.github.io/team21/recipe.html">Tom yum goong</a>-->
                     </div>
                 </div>
             </div>

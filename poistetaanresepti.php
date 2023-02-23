@@ -39,35 +39,34 @@ include ("sidenav.html");
 <br>
 <br>
 <br>
-           <div class="parent-container d-flex" style="background-color: rgb(244, 233, 233);">
+<!--           <div class="parent-container d-flex" style="background-color: rgb(244, 233, 233);">
             <div class="container">
                 <div class="row">
                     <div class="col" style="margin-left: 10em;">
                         <?php
-                        //if (isset($_SESSION["user_ok"])){
-                            $yhteys=mysqli_connect("db", "erika", "projekti");
-                            $tietokanta=mysqli_select_db($yhteys, "reseptikanta");
-                            $tulos=mysqli_query($yhteys, "select * from reseptit");
-                        print "<h2>".$_SESSION["user_ok"]."!</h2>";                        
+                        //$yhteys=mysqli_connect("db", "erika", "projekti");
+                        //$tietokanta=mysqli_select_db($yhteys, "reseptikanta");
+                        //$tulos=mysqli_query($yhteys, "select * from reseptit");
+                        //print "<h2>".$_SESSION["user_ok"]."!</h2>";                        
                         ?>
 
                     </div>
                 </div>
             </div>
-        </div>
+        </div> -->
         <div class="parent-container d-flex">
 <div class="container">
 <div class="row">
-                    <div class="col" style="margin-left:5em; margin-top: 5em;">
+<div class="col" style="margin-left:5em; margin-top: 5em;">
 <?php
-  $yhteys=mysqli_connect("db", "erika", "projekti");
-  $tietokanta=mysqli_select_db($yhteys, "reseptikanta");
-  $tulos=mysqli_query($yhteys, "select * from reseptit");
-    while ($rivi=mysqli_fetch_object($tulos)){
-        print "$rivi->nimi<br>\n";
-    }
-    ?>
-                        <a href="poistaresepti.php"><button class="button">Delete recipe</button></a>
+$yhteys=mysqli_connect("db", "erika", "projekti");
+$tietokanta=mysqli_select_db($yhteys, "reseptikanta");
+$tulos=mysqli_query($yhteys, "select * from reseptit");
+while ($rivi=mysqli_fetch_object($tulos)){
+    print "$rivi->nimi<br>\n"."<a href=' ./poistaresepti.php?poistettava=$rivi->id'>Delete</a>";
+}
+?>
+
                         </div>
                     </div>
             </div>

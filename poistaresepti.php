@@ -25,6 +25,6 @@ mysqli_stmt_bind_param($stmt, 'i', $poistettava);
 mysqli_stmt_execute($stmt);
 mysqli_close($yhteys);
 
-header("Location:profilepage.php");
+header("Location:poistetaanresepti.php");
 exit;
 ?>
