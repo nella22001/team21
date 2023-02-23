@@ -7,9 +7,9 @@ if (!isset($_SESSION["user_ok"])){ //jos sessioniin ei ole laitettu sellaista us
 	exit;
 }
 
-$nimi=isset($_POST["nimi"]) ? $_POST["id"] : ""; //??????????????onko nämä kunnossa
-$etunimi=isset($_POST["etunimi"]) ? $_POST["etunimi"] : "";
-$sukunimi=isset($_POST["sukunimi"]) ? $_POST["sukunimi"] : 0;
+$nimi=isset($_POST["nimi"]) ? $_POST["nimi"] : ""; //??????????????onko nämä kunnossa
+$ainekset=isset($_POST["etunimi"]) ? $_POST["ainekset"] : "";
+$ohje=isset($_POST["sukunimi"]) ? $_POST["ohje"] : 0;
 
 //Jos ei tietoa ole annettu
 //ohjataan pyyntö takaisin lomakkeelle
@@ -41,6 +41,6 @@ mysqli_stmt_execute($stmt);
 //Suljetaan tietokantayhteys
 mysqli_close($yhteys);
 
-header("Location:./profilepage.php");
+header("Location:profilepage.php");
 exit;
 ?>

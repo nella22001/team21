@@ -1,14 +1,14 @@
-<?php //MUOKATTAVAA TÄSSÄ??!!
+<?php
 session_start();
 //tutkitaan, onko olemassa käynnissäolevaa kirjautumista
 if (!isset($_SESSION["user_ok"])){ //jos sessioniin ei ole laitettu sellaista user ok arvoa, käyttäjä ei ole kirjautunut
-	$_SESSION["paluuosoite"]="profilepage.php"; //laitetaan sessioon talteen, minne oltiin menossa
+	$_SESSION["paluuosoite"]="muokkaaresepti.php"; //laitetaan sessioon talteen, minne oltiin menossa
 	header("Location:kirjaudu.html"); //ohjataan käyttäjä kirjautumaan
 	exit;
 }
 ?>
 <?php
-
+//KESKENERÄINEN!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 $muokattava=isset($_GET["muokattava"]) ? $_GET["muokattava"] : "";
 
 //Jos tietoa ei ole annettu, palataan omalle sivulle
@@ -35,15 +35,15 @@ mysqli_stmt_execute($stmt);
 //Koska luetaan prepared statementilla, tulos haetaan 
 //metodilla mysqli_stmt_get_result($stmt);
 $tulos=mysqli_stmt_get_result($stmt);
-//if (!$rivi=mysqli_fetch_object($tulos)){
-    //print "No such information was found!";
-    //exit;
-//}
+if (!$rivi=mysqli_fetch_object($tulos)){
+    print "No such information was found!";
+    exit;
+}
 ?>
 <form action='paivitaresepti.php' method='post'>
  <!-- <input type='text' name='id' value='<?php //print $rivi->nimi;?>' readonly><br> -->
- <label for='nimi'>Name of the recipe:</label><br>
-   <input id=kursori type='text' name='nimi' value='<?php print $rivi->nimi;?>'><br>
+    <label for='nimi'>Name of the recipe:</label><br>
+    <input id=kursori type='text' name='nimi' value='<?php print $rivi->nimi;?>'><br>
 
     <label for='ainekset'>Ingredients:</label><br>
     <textarea name='ainekset' cols='70' rows='15' value='<?php print $rivi->ainekset;?>'></textarea><br><br>
