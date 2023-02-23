@@ -5,7 +5,7 @@ $muokattava=isset($_GET["muokattava"]) ? $_GET["muokattava"] : "";
 //Jos tietoa ei ole annettu, palataan omalle sivulle
 //if (empty($muokattava)){
     //header("Location:profilepage.php");
-   // exit;
+    //exit;
 //}
 
 mysqli_report(MYSQLI_REPORT_ALL ^ MYSQLI_REPORT_INDEX);
@@ -26,10 +26,10 @@ mysqli_stmt_execute($stmt);
 //Koska luetaan prepared statementilla, tulos haetaan 
 //metodilla mysqli_stmt_get_result($stmt);
 $tulos=mysqli_stmt_get_result($stmt);
-if (!$rivi=mysqli_fetch_object($tulos)){
-    print "No such information was found!";
-    exit;
-}
+//if (!$rivi=mysqli_fetch_object($tulos)){
+    //print "No such information was found!";
+    //exit;
+//}
 ?>
 <form action='paivitaresepti.php' method='post'>
 <!--    <input type='text' name='id' value='<?php //print $rivi->id;?>' readonly><br> -->
