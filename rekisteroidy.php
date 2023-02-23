@@ -23,8 +23,8 @@ if (isset($_POST["tunnus"]) && isset($_POST["salasana"]) &&
     elseif(empty($salasana || $salasana2)){
         die('The password field is empty. Please try again!');
     }  
-    
 }
+
 else{
     header("Location:rekisteroityminen.html");
     exit;
@@ -46,6 +46,7 @@ mysqli_stmt_bind_param($stmt, "ssss", $tunnus, $salasana, $etunimi, $sukunimi); 
 mysqli_stmt_execute($stmt);
 mysqli_close($yhteys);
 
+// Rekisteröinti tehty onnistuneesti, ohjataan käyttäjä sivustolle, jossa se kerrotaan ja siellä olevasta linkistä pääsee omille sivuille. 
 header("Location:kiitos.html");
 exit;
 ?>
