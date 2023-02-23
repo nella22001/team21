@@ -16,7 +16,8 @@ else {
     print "Please fill out all the fields!";
 }
 
-//mysqli_report(MYSQLI_REPORT_ALL ^ MYSQLI_REPORT_INDEX);
+mysqli_report(MYSQLI_REPORT_ALL ^ MYSQLI_REPORT_INDEX);
+
 try{
     $yhteys=mysqli_connect("db", "erika", "projekti", "reseptikanta");
 }
