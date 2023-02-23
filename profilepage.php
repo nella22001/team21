@@ -76,6 +76,9 @@ if (!isset($_SESSION["user_ok"])){ //jos sessioniin ei ole laitettu sellaista us
                         <br>
                         <?php
                         //if (isset($_SESSION["user_ok"])){
+                            $yhteys=mysqli_connect("db", "erika", "projekti");
+                            $tietokanta=mysqli_select_db($yhteys, "reseptikanta");
+                            $tulos=mysqli_query($yhteys, "select * from reseptit");
                         print "<h2>Welcome, ".$_SESSION["user_ok"]."!</h2>";                        
                         ?>
 
