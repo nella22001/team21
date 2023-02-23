@@ -12,8 +12,12 @@ $ainekset=isset($_POST["ainekset"]) ? $_POST["ainekset"] : "";
 $ohje=isset($_POST["ohje"]) ? $_POST["ohje"] : "";
 $reseptit=isset($_POST["minunreseptit"]) ? $_POST["minunreseptit"] : [];
 
+
+//TÄLLÄ HETKELLÄ VALITTAA ETTÄ TÄYTÄ KAIKKI KENTÄT, VAIKKA NE ON KAIKKI TÄYTETTY
+//EI ONNISTU RESPETIN LISÄÄMINEN MYÖS LAPSITAULUUN
 if (empty($nimi) || empty($ainekset) || empty($ohje)) {
     print "Please fill out all the fields!";
+    exit; 
 }
 
 mysqli_report(MYSQLI_REPORT_ALL ^ MYSQLI_REPORT_INDEX);

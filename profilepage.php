@@ -48,14 +48,14 @@ if (!isset($_SESSION["user_ok"])){ //jos sessioniin ei ole laitettu sellaista us
                      </li>
                  </ul>
                  </div> <!--sivunavigointi reseptien lisäys,poisto, muokkaus aina kun ollaan omilla sivuilla-->
-                 <div class="sidenav">
+         </nav>
+         </header>
+         <div class="sidenav">
                 <a href="lisaaresepti.php"><button class="button">Add a recipe</button></a>
                 <a href="reseptinmuokkaus.php"><button class="button">Edit recipes</button></a>
                 <a href="poistetaanresepti.php"><button class="button">Delete recipes</button></a>
                 <a href="kirjauduulos.php"><button class="button">Sign out</button></a>
-              </div>
-         </nav>
-         </header>
+         </div>
          <br>
          <br>
          <br>
