@@ -32,15 +32,9 @@ $tulos=mysqli_stmt_get_result($stmt);
 //}
 ?>
 <form action='paivitaresepti.php' method='post'>
-<!--    <input type='text' name='id' value='<?php //print $rivi->id;?>' readonly><br> -->
-    <!-- testataan<label for='nimi'>Name of the recipe:</label><br>
-    <input id=kursori type='text' name='nimi' value='<?php //print "$rivi->nimi";?>'><br> -->
-    <?php
-    $muokattava=mysqli_query($yhteys, "select * from reseptit");
-                         while ($rivi=mysqli_fetch_object($muokattava)){
-                            print "$rivi->nimi<br>\n";
-                        }
-                        ?>
+ <input type='text' name='id' value='<?php //print $rivi->id;?>' readonly><br> -->
+    <label for='nimi'>Name of the recipe:</label><br>
+    <input id=kursori type='text' name='nimi' value='<?php print "$rivi->nimi";?>'><br>
 
     <label for='ainekset'>Ingredients:</label><br>
     <textarea name='ainekset' cols='70' rows='15' value='<?php print $rivi->ainekset;?>'></textarea><br><br>
