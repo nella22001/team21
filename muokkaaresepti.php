@@ -34,7 +34,7 @@ $tulos=mysqli_stmt_get_result($stmt);
 <form action='paivitaresepti.php' method='post'>
  <!-- <input type='text' name='id' value='<?php //print $rivi->nimi;?>' readonly><br> -->
  <label for='nimi'>Name of the recipe:</label><br>
-<textarea name='nimi' cols='10' rows='10' value='<?php print $rivi->nimi;?>'></textarea><br><br>
+<textarea name='nimi' cols='10' rows='5' value='<?php print $rivi->nimi;?>'></textarea><br><br>
 
    <!-- <input id=kursori type='text' name='nimi' value='<?php //print $rivi->nimi;?>'><br> -->
 
