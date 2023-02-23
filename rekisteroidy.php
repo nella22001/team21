@@ -14,6 +14,7 @@ if (isset($_POST["tunnus"]) && isset($_POST["salasana"]) &&
     //Rekisteröiti ei mene läpi jos kohtia on tyhjänä tai salasanat eivät täsmää. 
     if($salasana != $salasana2) {
         die('Passwords do not match! Please try again!');
+        
     }
     elseif(empty($etunimi)){
         die('Please fill out your first name and try again.');
