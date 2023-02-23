@@ -5,12 +5,25 @@
     height: 0px;
     background-position: center;
 }
+body{
+    text-align: center;
+    background-image: url(assets/images/BackgroundSalad.jpg);
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center;
+    background-size:100%
 
+} 
+.container5{
+  padding-right: 100%;
+  padding-left: 7%;
+}
+/*
 body {
     padding: 0;
     margin: 0;
     background: rgba(255, 255, 255, 1);  
-}
+}*/
 .navbar {
     height: 15em;
 }
@@ -37,13 +50,13 @@ body {
 .navbar-collapse {
     justify-content: flex-end;
 }
-
+/*
 .background_image{
     background-image: url(/team21/assets/images/BackgroundSalad.jpg);
     background-size: cover;
     background-attachment: fixed;
     background-position: center;
-}
+}*/
 
 .container1{
     background-color:#fff;
