@@ -37,7 +37,7 @@ $tulos=mysqli_stmt_get_result($stmt);
     <input id=kursori type='text' name='nimi' value='<?php //print "$rivi->nimi";?>'><br> -->
     <?php
     $muokattava=mysqli_query($yhteys, "select * from reseptit");
-                         while ($rivi=mysqli_fetch_object($muokttava)){
+                         while ($rivi=mysqli_fetch_object($muokattava)){
                             print "$rivi->nimi<br>\n";
                         }
                         ?>
