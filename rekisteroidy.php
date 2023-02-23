@@ -9,7 +9,7 @@ if (isset($_POST["tunnus"]) && isset($_POST["salasana"]) &&
     $etunimi=$_POST["etunimi"];
     $sukunimi=$_POST["sukunimi"];
 
-    // Erroreiden tarkistusta ehtolauseilla.
+    //Erroreiden tarkistusta ehtolauseilla.
     //Takastetaan täsmääkö salasanat toisiinsa ja jos jokin kohta on jäänyt tyhjäksi niin myös ne kohdat tarkastetaan.
     //Rekisteröiti ei mene läpi jos kohtia on tyhjänä tai salasanat ei täsmää. 
     if($salasana != $salasana2) {
@@ -27,13 +27,13 @@ if (isset($_POST["tunnus"]) && isset($_POST["salasana"]) &&
     elseif(empty($salasana || $salasana2)){
         die('The password field is empty. Please try again!');
     }  
-}
+ }
 
-else{
-    header("Location:rekisteroityminen.html");
-    exit;
-}
-//Otetaan yhteys tietokantaan.
+    else{
+        header("Location:rekisteroityminen.html");
+     exit;
+    }
+//Otetaan yhteys tietokantaan. Palvelimena db, joka on dockeriin asennettu tietokanta. Tunnus erika ja salasana on projekti. 
 $yhteys=mysqli_connect("db", "erika", "projekti");
 if (!$yhteys) {
     die ("Failed to create a connection: " . mysqli_connect_error());
@@ -43,15 +43,21 @@ if (!$tietokanta) {
     die ("Failed to connect to the right database: " . mysqli_connect_error());
 }
 
-
+//Tehdään sql-lause, jossa kysymysmerkeillä osoitetaan paikat
+//joihin laitetaan muuttujien arvoja
 //Sijoitetaan muuttujat sql-lauseeseen
 $sql="insert into kayttaja(tunnus, salasana, etunimi, sukunimi) values(?, md5(?), ?, ?)";
+//Valmistellaan sql-lause.
 $stmt=mysqli_prepare($yhteys, $sql);
-mysqli_stmt_bind_param($stmt, "ssss", $tunnus, $salasana, $etunimi, $sukunimi); //järjestys pitää olla sama kuin rivi 46
-mysqli_stmt_execute($stmt);
+//Sijoitetaan muuttujat oikeisiin paikkoihin. s=merkkijono. 
+mysqli_stmt_bind_param($stmt, "ssss", $tunnus, $salasana, $etunimi, $sukunimi); 
+//Suljetaan tietokantayhteys.
 mysqli_close($yhteys);
 
-//Rekisteröinti tehty onnistuneesti, ohjataan käyttäjä sivustolle, jossa se kerrotaan ja siellä olevasta linkistä pääsee kirjautumaan ja omille sivuille. 
+//Rekisteröinti tehty onnistuneesti.
+//Ohjataan käyttäjä kiitos.html sivustolle.
+//Sivustolla käyttäjä saa ilmoituksen onnistuneesta rekisteröinnista.
+//Käyttäjä pääsee linkkiä painamalla kirjautumaan ja sitä kautta omalle profiili sivustolleen painamalla linkkiä.
 header("Location:kiitos.html");
 exit;
 ?>
