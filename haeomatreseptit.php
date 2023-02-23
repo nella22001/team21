@@ -12,11 +12,11 @@ try{
     $yhteys=mysqli_connect("db", "erika", "projekti", "reseptikanta");
 }
 catch(Exception $e){
-    print "Yhteysvirhe!";
+    print "Could not connect to the database!";
     exit;
 }
 
-$tulos=mysqli_query($yhteys, "select nimi from reseptit where tunnus is ?");
+$tulos=mysqli_query($yhteys, "select nimi from reseptit where tunnus=?");
 print "<table border='1'>";
 while ($rivi=mysqli_fetch_object($tulos)) { 
     print "<tr>";
@@ -28,4 +28,8 @@ print "</table>";
 //while ($rivi=mysqli_fetch_object($tulos)) { 
 //    print "$rivi->nimi <button onclick='haeYksiResepti($rivi->id);'>Muokkaa</button>";
 //}
+<?php
+//Suljetaan tietokantayhteys
+mysqli_close($yhteys);
+?>
 ?>

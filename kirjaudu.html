@@ -55,19 +55,51 @@
                 </div>
             </nav>
     </header>
-   
+    <script>
+        function lahetaKayttaja(lomake){
+            var user=new Object(); //luodaan olio user
+            user.tunnus=lomake.tunnus.value; //annettaan oliolle arvot lomakkeen kentistä
+            user.salasana=lomake.salasana.value;
+            var jsonUser=JSON.stringify(user); //tehdään olio merkkijonoksi ja lähetetään json muotoisena
+            
+            xmlhttp = new XMLHttpRequest();
+            xmlhttp.onreadystatechange = function() {
+              if (this.readyState == 4 && this.status == 200) {
+                    if (this.responseText=="ok"){ //jos kirjauduajax palauttaa ok
+                        window.location.assign("../profilepage.php"); //mennään tähän ohjelmaan
+                    }
+                    else{
+                        document.getElementById("result").innerHTML = this.responseText; //jos tulee ongelmia, tehdään tätä
+                    }
+              }
+            };
+            xmlhttp.open("POST", "../kirjauduajax.php", true); //olio lähetetään tälle ohjelmalle
+            xmlhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+            xmlhttp.send("user=" + jsonUser);	
+        }
+        </script>
     <h2>Log in</h2>
-   
-    <form action='tarkistakirjautuminen.php' method='post'>
-    Username: <input type='text' name='tunnus' value=''><br><br>
+   <form id="userlomake">
+    Username: <input id=kursori type='text' name='tunnus' value=''><br><br>
     Password: <input type='password' name='salasana' value=''><br><br>   
-    <input type='submit' name='ok' value='Log in'><br><br>
+    <input type='button' name='ok' value='Log in' onclick='lahetaKayttaja(this.form);''><br><br> <!--Log in käynnistää javascriptin funktion lahetaKayttaja-->
+    </form>
+    <!--<p id='result'>Palaute tähän</p>-->
+
     <p>You do not have an account? Create your account <a href=rekisteroityminen.html>here</a></p>
     </form>
-    <?php if($error){ ?>
-        <script> alert ("Wrong username or password, try again!")</script>
-      <?php } ?>
-    
+    <script>
+        kursori.focus();
+    </script>
+
+<!--
+<?php
+if($error);
+    //<script>
+    alert ("Wrong username or password, try again!");
+    //</script>
+?>
+-->   
 <br>
    <br>
    <br>

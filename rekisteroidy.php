@@ -10,7 +10,7 @@ if (isset($_POST["tunnus"]) && isset($_POST["salasana"]) &&
     // Erroreiden tarkistusta, jos salasana ei täsmää tai jotain kenttää ei täytetä niin käyttäjä saa siitä virheilmoituksen. 
     if($salasana != $salasana2) {
         die('Passwords do not match! Please try again!');
-        
+    
     }
     elseif(empty($etunimi)){
         die('Please fill out your first name.');
@@ -23,8 +23,7 @@ if (isset($_POST["tunnus"]) && isset($_POST["salasana"]) &&
     }
     elseif(empty($salasana || $salasana2)){
         die('The password field is empty. Please try again!');
-    }
-    
+    }  
 }
 else{
     header("Location:rekisteroityminen.html");
