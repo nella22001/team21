@@ -2,7 +2,7 @@
 session_start();
 //tutkitaan, onko olemassa käynnissäolevaa kirjautumista
 if (!isset($_SESSION["user_ok"])){ //jos sessioniin ei ole laitettu sellaista user ok arvoa, käyttäjä ei ole kirjautunut
-	$_SESSION["paluuosoite"]="profilepage.php"; //laitetaan sessioon talteen, minne oltiin menossa
+	$_SESSION["paluuosoite"]="poistetaanresepti.php"; //laitetaan sessioon talteen, minne oltiin menossa
 	header("Location:kirjaudu.html"); //ohjataan käyttäjä kirjautumaan
 	exit;
 }
@@ -18,7 +18,7 @@ if (!isset($_SESSION["user_ok"])){ //jos sessioniin ei ole laitettu sellaista us
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="assets/css/style.css" rel="stylesheet" type="text/css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
-    <title>Muokkaa reseptiä</title>
+    <title>Recipe World - Edit recipe</title>
 </head>
 <body> <!--Tulostaa reseptit-->
 <div class="background_image"><!--background-->
@@ -79,14 +79,13 @@ if (!isset($_SESSION["user_ok"])){ //jos sessioniin ei ole laitettu sellaista us
   $yhteys=mysqli_connect("db", "erika", "projekti");
   $tietokanta=mysqli_select_db($yhteys, "reseptikanta");
   $tulos=mysqli_query($yhteys, "select * from reseptit");
-                         $tulos=mysqli_query($yhteys, "select * from reseptit");
-                         while ($rivi=mysqli_fetch_object($tulos)){
-                            print "$rivi->nimi<br>\n";
-                        }
-                        ?>
+    while ($rivi=mysqli_fetch_object($tulos)){
+        print "$rivi->nimi<br>\n";
+    }
+    ?>
                         <a href="poistaresepti.php"><button class="button">Delete recipe</button></a>
                         </div>
-                        </div>
+                    </div>
             </div>
         </div>
         </div><!--background ends-->
