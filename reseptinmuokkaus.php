@@ -17,11 +17,15 @@
 <div class="row">
                     <div class="col" style="margin-left:5em; margin-top: 5em;">
 <?php
+  $yhteys=mysqli_connect("db", "erika", "projekti");
+  $tietokanta=mysqli_select_db($yhteys, "reseptikanta");
+  $tulos=mysqli_query($yhteys, "select * from reseptit");
                          $tulos=mysqli_query($yhteys, "select * from reseptit");
                          while ($rivi=mysqli_fetch_object($tulos)){
                             print "$rivi->nimi<br>\n";
                         }
                         ?>
+                        <a href="muokkaaresepti.php"><button class="button">Edit recipe</button></a>
                         </div>
                         </div>
             </div>
