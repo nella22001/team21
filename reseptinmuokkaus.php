@@ -62,6 +62,12 @@ if (!isset($_SESSION["user_ok"])){ //jos sessioniin ei ole laitettu sellaista us
                         <br>
                         <br>
                         <br>
+                        <br>
+                        <br>
+                        <br>
+                        <br>
+                        <br>
+                        <br>
                         <?php
                         //if (isset($_SESSION["user_ok"])){
                             $yhteys=mysqli_connect("db", "erika", "projekti");
