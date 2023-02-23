@@ -45,6 +45,7 @@ if (!isset($_SESSION["user_ok"])){ //jos sessioniin ei ole laitettu sellaista us
                    <a class="nav-link" href="contact.html">Contact</a>
                </li>
            </ul>
+           </header>
            <br>
          <br>
          <br>
