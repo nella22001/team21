@@ -55,7 +55,6 @@ if (!isset($_SESSION["user_ok"])){ //jos sessioniin ei ole laitettu sellaista us
          <br>
          <br>
          <br>
-         <br>
            <div class="parent-container d-flex" style="background-color: rgb(244, 233, 233);">
             <div class="container">
                 <div class="row">
@@ -72,7 +71,7 @@ if (!isset($_SESSION["user_ok"])){ //jos sessioniin ei ole laitettu sellaista us
                 </div>
             </div>
         </div>
-<div class="parent-container d-flex">
+        <div class="parent-container d-flex">
 <div class="container">
 <div class="row">
                     <div class="col" style="margin-left:5em; margin-top: 5em;">
@@ -85,7 +84,7 @@ if (!isset($_SESSION["user_ok"])){ //jos sessioniin ei ole laitettu sellaista us
                             print "$rivi->nimi<br>\n";
                         }
                         ?>
-                        <a href="muokkaaresepti.php"><button class="button">Edit recipe</button></a>
+                        <a href="poistaresepti.php"><button class="button">Delete recipe</button></a>
                         </div>
                         </div>
             </div>
