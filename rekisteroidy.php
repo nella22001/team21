@@ -1,4 +1,6 @@
 <?php
+// Otetaan rekisteröitymislomakkeen tiedot vastaan $_POST metodilla.
+//Jotta tietyn nimisiä syötekenttiä saataisiin useita, tulee syötekentän nimen perässä olla hakasulkeet.
 if (isset($_POST["tunnus"]) && isset($_POST["salasana"]) && 
     isset($_POST["etunimi"]) && isset($_POST["sukunimi"])){
     $tunnus=$_POST["tunnus"];
@@ -7,7 +9,9 @@ if (isset($_POST["tunnus"]) && isset($_POST["salasana"]) &&
     $etunimi=$_POST["etunimi"];
     $sukunimi=$_POST["sukunimi"];
 
-    // Erroreiden tarkistusta, jos salasana ei täsmää tai jotain kenttää ei täytetä niin käyttäjä saa siitä virheilmoituksen. 
+    // Erroreiden tarkistusta ehtolauseilla.
+    //Takastetaan täsmääkö salasanat toisiinsa ja jos jokin kohta on jäänyt tyhjäksi niin myös ne kohdat tarkastetaan.
+    //Rekisteröiti ei mene läpi jos kohtia on tyhjänä tai salasanat ei täsmää. 
     if($salasana != $salasana2) {
         die('Passwords do not match! Please try again!');
     }
