@@ -6,12 +6,12 @@ if (!isset($_SESSION["user_ok"])){ //jos sessioniin ei ole laitettu sellaista us
 	header("Location:kirjaudu.html"); //ohjataan käyttäjä kirjautumaan
 	exit;
 }
-$reseptit=isset($_POST["minunreseptit"]) ? $_POST["minunreseptit"] : [];
 
 if (isset($_POST["nimi"]) && isset($_POST["ainekset"]) && isset($_POST["ohje"])) {
     $nimi=$_POST["nimi"];
     $ainekset=$_POST["ainekset"];
     $ohje=$_POST["ohje"];
+    $reseptit=isset($_POST["minunreseptit"]) ? $_POST["minunreseptit"] : [];
 }
 else {
     print "Please fill out all the fields!";
@@ -45,14 +45,15 @@ if (!empty($nimi) && !empty($ainekset) && !empty($ohje)) { //lisääminen if loo
         $stmt=mysqli_prepare($yhteys, $sql);
         mysqli_stmt_bind_param($stmt, 'is', $last_id, $minunreseptit); 
         mysqli_stmt_execute($stmt);
+        mysqli_close($yhteys);
     }
 
     header("Location:uusiresepti.php"); //headerin funktio: ei enää lähetetä tietoa tietokantaan uudestaan, kun painaa refresh
     exit;
 }
 //Suljetaan tietokantayhteys
-mysqli_close($yhteys);
+//mysqli_close($yhteys);
 
-header("Location:profilepage.php");
-exit;
+//header("Location:profilepage.php");
+//exit;
 ?>
