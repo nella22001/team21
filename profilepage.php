@@ -47,15 +47,12 @@ if (!isset($_SESSION["user_ok"])){ //jos sessioniin ei ole laitettu sellaista us
                          <a class="nav-link" href="contact.html">Contact</a>
                      </li>
                  </ul>
-                 </div> <!--sivunavigointi reseptien lisäys,poisto, muokkaus aina kun ollaan omilla sivuilla-->
-                 <div class="sidenav">
-                <a href="lisaaresepti.php"><button class="button">Add a recipe</button></a>
-                <a href="reseptinmuokkaus.php"><button class="button">Edit recipes</button></a>
-                <a href="poistetaanresepti.php"><button class="button">Delete recipes</button></a>
-                <a href="kirjauduulos.php"><button class="button">Sign out</button></a>
-              </div>
+                 </div>
          </nav>
          </header>
+         <?php //sivunavigointi reseptien lisäys,poisto, muokkaus aina kun ollaan omilla sivuilla
+         include ("sidenav.html");
+         ?>
          <br>
          <br>
          <br>
