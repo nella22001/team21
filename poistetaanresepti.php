@@ -63,7 +63,7 @@ $yhteys=mysqli_connect("db", "erika", "projekti");
 $tietokanta=mysqli_select_db($yhteys, "reseptikanta");
 $tulos=mysqli_query($yhteys, "select * from reseptit");
 while ($rivi=mysqli_fetch_object($tulos)){
-    print "$rivi->nimi<br>\n"."<a href=' ./poistaresepti.php?poistettava=$rivi->id'>Delete</a>";
+    print "$rivi->nimi"."<a href=' ./poistaresepti.php?poistettava=$rivi->id'> Delete</a><br>";
 }
 ?>
 
