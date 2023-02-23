@@ -36,32 +36,30 @@
     </style>
 </head>    
 <body>
+<header class="page-header header container-fluid text-center">
 
-        <header class="page-header header container-fluid text-center">
-
-            <nav class="navbar navbar-expand-md"> <!--navigation bar with a logo-->
-                <a href="index.html"><img class="navbar-brand" src="assets/images/RecipeWorld.png" alt="Recipe World Logo"></a>
-                <button class="navbar-toggler navbar-dark" type="button" data-toggle="collapse" data-target="#main-navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="collapse navbar-collapse" id="main-navigation">
-                    <ul class="navbar-nav">
-                        <li class="nav-item">
-                            <a class="nav-link" href="kirjaudu.html">Sign in</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="index.html">Home</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="category.html">Recipes</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="contact.html">Contact</a>
-                        </li>
-                    </ul>
-                    
-                </div>
-            </nav>
+    <nav class="navbar navbar-expand-md"> <!--navigation bar with a logo-->
+        <a href="index.html"><img class="navbar-brand" src="assets/images/RecipeWorld.png" alt="Recipe World Logo"></a>
+            <button class="navbar-toggler navbar-dark" type="button" data-toggle="collapse" data-target="#main-navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="main-navigation">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link" href="kirjaudu.html">Sign in</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="category.html">Recipes</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="contact.html">Contact</a>
+                    </li>
+                </ul>            
+            </div>
+        </nav>
     </header>
     <script>
         function lahetaKayttaja(lomake){
@@ -85,20 +83,20 @@
             xmlhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
             xmlhttp.send("user=" + jsonUser);	
         }
-        </script>
-    <h2>Log in</h2>
-   <form id="userlomake">
-    Username: <input id=kursori type='text' name='tunnus' value=''><br><br>
-    Password: <input type='password' name='salasana' value=''><br><br>   
-    <input type='button' name='ok' value='Log in' onclick='lahetaKayttaja(this.form);''><br><br> <!--Log in käynnistää javascriptin funktion lahetaKayttaja-->
-    
-    <!--<p id='result'>Palaute tähän</p>-->
-
-    <p>You do not have an account? Create your account <a href=rekisteroityminen.html>here</a></p>
-    </form>
-    <script>
-        kursori.focus();
     </script>
+    <h2>Log in</h2>
+        <form id="userlomake">
+        Username: <input id=kursori type='text' name='tunnus' value=''><br><br>
+        Password: <input type='password' name='salasana' value=''><br><br>   
+        <input type='button' name='ok' value='Log in' onclick='lahetaKayttaja(this.form);'><br><br> <!--Log in käynnistää javascriptin funktion lahetaKayttaja-->
+    
+        <!--<p id='result'>Palaute tähän</p>-->
+
+        <p>You do not have an account? Create your account <a href=rekisteroityminen.html>here</a></p>
+        </form>
+        <script>
+            kursori.focus();
+        </script>
 
 <!--
 <?php
@@ -108,17 +106,6 @@ if($error);
     //</script>
 ?>
 -->   
-<br>
-   <br>
-   <br>
-   <br>
-   <br>
-   <br>
-   <br>
-   <br>
-   <br>
-   <br>
-   <br> 
-
+<br><br><br><br><br><br><br><br><br><br><br>
 </body>
 </html>
