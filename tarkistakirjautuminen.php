@@ -1,4 +1,5 @@
 <?php
+//TÄTÄ NYT EI KÄYTETÄ KUN KIRJAUTUMINEN TAPAHTUU AJAXILLA
 session_start(); //session start lause mahdollistaa session olion käyttämisen
 if (!isset($_SESSION["paluuosoite"])){
     $_SESSION["paluuosoite"]="profilepage.php"; //ei ole paluuosoitetta kun vasta tultiin

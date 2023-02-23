@@ -6,6 +6,9 @@ if (!isset($_SESSION["user_ok"])){ //jos sessioniin ei ole laitettu sellaista us
 	header("Location:kirjaudu.html"); //ohjataan käyttäjä kirjautumaan
 	exit;
 }
+
+$haettava=isset($_GET["haettava"]) ? $_GET["haettava"] : "";
+
 mysqli_report(MYSQLI_REPORT_ALL ^ MYSQLI_REPORT_INDEX);
 
 try{
@@ -16,20 +19,10 @@ catch(Exception $e){
     exit;
 }
 
-$tulos=mysqli_query($yhteys, "select nimi from reseptit where tunnus=?");
-print "<table border='1'>";
-while ($rivi=mysqli_fetch_object($tulos)) { 
-    print "<tr>";
-    print "<td>$rivi->nimi<td>$rivi->ainekset<td>$rivi->ohje<td><button onclick='haeomatreseptit($rivi->nimi);'>Muokkaa reseptia</button>";
+$tulos=mysqli_query($yhteys, "select (nimi, ainekset, ohje) from reseptit where id=?");
+while ($rivi=mysqli_fetch_object($tulos)){
+    print "<p>$rivi->nimi<br>$rivi->ainekset<br>$rivi->ohje</p>";
 }
-print "</table>";
-
-//$tulos=mysqli_query($yhteys, "select nimi from reseptit");
-//while ($rivi=mysqli_fetch_object($tulos)) { 
-//    print "$rivi->nimi <button onclick='haeYksiResepti($rivi->id);'>Muokkaa</button>";
-//}
-<?php
-//Suljetaan tietokantayhteys
 mysqli_close($yhteys);
-?>
+
 ?>
