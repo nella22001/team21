@@ -6,6 +6,7 @@ if (!isset($_SESSION["user_ok"])){ //jos sessioniin ei ole laitettu sellaista us
 	header("Location:kirjaudu.html"); //ohjataan käyttäjä kirjautumaan
 	exit;
 }
+$reseptit=isset($_POST["minunreseptit"]) ? $_POST["minunreseptit"] : [];
 
 if (isset($_POST["nimi"]) && isset($_POST["ainekset"]) && isset($_POST["ohje"])) {
     $nimi=$_POST["nimi"];
