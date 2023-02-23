@@ -1,3 +1,12 @@
+<?php //MUOKATTAVAA TÄSSÄ??!!
+session_start();
+//tutkitaan, onko olemassa käynnissäolevaa kirjautumista
+if (!isset($_SESSION["user_ok"])){ //jos sessioniin ei ole laitettu sellaista user ok arvoa, käyttäjä ei ole kirjautunut
+	$_SESSION["paluuosoite"]="profilepage.php"; //laitetaan sessioon talteen, minne oltiin menossa
+	header("Location:kirjaudu.html"); //ohjataan käyttäjä kirjautumaan
+	exit;
+}
+?>
 <?php
 
 $muokattava=isset($_GET["muokattava"]) ? $_GET["muokattava"] : "";
