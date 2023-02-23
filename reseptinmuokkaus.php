@@ -60,21 +60,12 @@ if (!isset($_SESSION["user_ok"])){ //jos sessioniin ei ole laitettu sellaista us
             <div class="container">
                 <div class="row">
                     <div class="col" style="margin-left: 10em;">
-                        <br>
-                        <br>
-                        <br>
-                        <br>
-                        <br>
-                        <br>
-                        <br>
-                        <br>
-                        <br>
                         <?php
                         //if (isset($_SESSION["user_ok"])){
                             $yhteys=mysqli_connect("db", "erika", "projekti");
                             $tietokanta=mysqli_select_db($yhteys, "reseptikanta");
                             $tulos=mysqli_query($yhteys, "select * from reseptit");
-                        print "<h2>Welcome, ".$_SESSION["user_ok"]."!</h2>";                        
+                        print "<h2>".$_SESSION["user_ok"]."!</h2>";                        
                         ?>
 
                     </div>
