@@ -7,7 +7,6 @@ if (!isset($_SESSION["user_ok"])){ //jos sessioniin ei ole laitettu sellaista us
 	exit;
 }
 ?>
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -22,48 +21,26 @@ if (!isset($_SESSION["user_ok"])){ //jos sessioniin ei ole laitettu sellaista us
     <title>Recipe World - My page</title>
 </head>
 <body>
-    
-    <div class="background_image"><!--background-->
-  
-        <header class="page-header header container-fluid text-center">
-         
-         <nav class="navbar navbar-expand-md"> <!--navigation bar with a logo-->
-            <a href="index.html"><img class="navbar-brand" src="assets/images/RecipeWorld.png" alt="Recipe World Logo"style="margin-left:10em;"></a>
-             <button class="navbar-toggler navbar-dark" type="button" data-toggle="collapse" data-target="#main-navigation">
-                 <span class="navbar-toggler-icon"></span>
-             </button>
-             <div class="collapse navbar-collapse" id="main-navigation">
-                 <ul class="navbar-nav">
-                     <li class="nav-item">
-                        <a class="nav-link" href="kirjaudu.html">Sign in</a>
-                    </li>
-                     <li class="navbar-item">
-                         <a class="nav-link" href="index.html">Home</a>
-                     </li>
-                     <li class="nav-item">
-                         <a class="nav-link" href="category.html">Recipes</a>
-                     </li>
-                     <li class="nav-item">
-                         <a class="nav-link" href="contact.html">Contact</a>
-                     </li>
-                 </ul>
-                 </div>
-         </nav>
-         </header>
-         <?php //sivunavigointi reseptien lisäys,poisto, muokkaus aina kun ollaan omilla sivuilla
-         include ("sidenav.html");
-         ?>
-         <br>
-         <br>
-         <br>
-         <br>
-         <br>
-         <br>
-         <br>
-         <br>
-         <br>
-         <br>
-         <br> <!--container josta löytyy käyttäjän tietoja, tässä tapauksessa nimi koska ei haluttu muuta-->
+<div class="background_image"><!--background-->
+
+<?php //header tässä kun ollaan php tiedostoissa
+include ("header.html");
+?>
+
+<?php //sivunavigointi reseptien lisäys,poisto, muokkaus aina kun ollaan omilla sivuilla
+include ("sidenav.html");
+?>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br> <!--container josta löytyy käyttäjän tietoja, tässä tapauksessa nimi koska ei haluttu muuta-->
          <div class="parent-container d-flex" style="background-color: rgb(244, 233, 233);">
             <div class="container">
                 <div class="row">

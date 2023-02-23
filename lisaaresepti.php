@@ -10,7 +10,6 @@ if (!isset($_SESSION["user_ok"])){ //jos sessioniin ei ole laitettu sellaista us
 <!DOCTYPE html>
 <html lang="en">
 <head>
-
     <meta name="author" content="Erika Mikonmaa, Heidi Nuust, Helmi Mikkola and Nella Järvenpää">
     <meta name="description" content="Having trouble with what to cook for dinner? Welcome to the most comprehensive online recipe collection. Recipe world has all the recipes you could ever dream of and more.">
     <meta name="keywords" content="recipe, food, chef, breakfast, lunch, dinner, vegan, paleo">
@@ -37,52 +36,30 @@ if (!isset($_SESSION["user_ok"])){ //jos sessioniin ei ole laitettu sellaista us
             body{
                 text-align: center;
             } 
-        </style>
-    </head>
-    <body>
-     <div class="background_image"><!--background-->   
-    
-    <header class="page-header header container-fluid text-center">
+    </style>
+</head>
+<body>
+<div class="background_image"><!--background-->   
 
-            <nav class="navbar navbar-expand-md"> <!--navigation bar with a logo-->
-                <a href="index.html"><img class="navbar-brand" src="assets/images/RecipeWorld.png" alt="Recipe World Logo"></a>
-                <button class="navbar-toggler navbar-dark" type="button" data-toggle="collapse" data-target="#main-navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="collapse navbar-collapse" id="main-navigation">
-                    <ul class="navbar-nav">
-                        <li class="nav-item">
-                            <a class="nav-link" href="kirjaudu.html">Sign in</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="index.html">Home</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="category.html">Recipes</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="contact.html">Contact</a>
-                        </li>
-                    </ul>
-                    
-                </div>
-            </nav>
-    </header>
-    <?php //sivunavigointi reseptien lisäys,poisto, muokkaus aina kun ollaan omilla sivuilla
-    include ("sidenav.html");
-    ?>  
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-   <h2>Add your recipe here</h2> 
-   <p>Fill out all the fields to add your recipe.</p>
+<?php //header tässä kun ollaan php tiedostoissa
+include ("header.html");
+?>
+
+<?php //sivunavigointi reseptien lisäys,poisto, muokkaus aina kun ollaan omilla sivuilla
+include ("sidenav.html");
+?>  
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<h2>Add your recipe here</h2> 
+<p>Fill out all the fields to add your recipe.</p>
    
    
    <form action='uusiresepti.php' method='post'>
