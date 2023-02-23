@@ -51,7 +51,7 @@ if (!isset($_SESSION["user_ok"])){ //jos sessioniin ei ole laitettu sellaista us
                  <div class="sidenav">
                 <a href="lisaaresepti.php"><button class="button">Add a recipe</button></a>
                 <a href="reseptinmuokkaus.php"><button class="button">Edit recipes</button></a>
-                <a href="#"><button class="button">Delete recipes</button></a>
+                <a href="poistetaanresepti.php"><button class="button">Delete recipes</button></a>
                 <a href="kirjauduulos.php"><button class="button">Sign out</button></a>
               </div>
          </nav>
