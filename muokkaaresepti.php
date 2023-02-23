@@ -3,10 +3,10 @@
 $muokattava=isset($_GET["muokattava"]) ? $_GET["muokattava"] : "";
 
 //Jos tietoa ei ole annettu, palataan omalle sivulle
-//if (empty($muokattava)){
-    //header("Location:profilepage.php");
-   // exit;
-//}
+if (empty($muokattava)){
+    header("Location:profilepage.php");
+    exit;
+}
 
 mysqli_report(MYSQLI_REPORT_ALL ^ MYSQLI_REPORT_INDEX);
 try{
