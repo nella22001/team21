@@ -75,8 +75,9 @@ if (!isset($_SESSION["user_ok"])){ //jos sessioniin ei ole laitettu sellaista us
                         <br>
                         <br>
                         <?php
-                        print "<h2>Welcome, username not here:(</h2>";
-
+                        //if (isset($_SESSION["user_ok"])){
+                        print "<h2>Welcome, ".$_SESSION["user_ok"]."!</h2>";
+                        //}
                         //$yhteys=mysqli_connect("db", "erika", "projekti");
                         //f (!$yhteys) {
                         //    die ("Failed to create a connection: " . mysqli_connect_error());
