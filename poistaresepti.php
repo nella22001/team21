@@ -1,4 +1,11 @@
 <?php
+session_start();
+//tutkitaan, onko olemassa käynnissäolevaa kirjautumista
+if (!isset($_SESSION["user_ok"])){ //jos sessioniin ei ole laitettu sellaista user ok arvoa, käyttäjä ei ole kirjautunut
+	$_SESSION["paluuosoite"]="poistaresepti.php"; //laitetaan sessioon talteen, minne oltiin menossa
+	header("Location:kirjaudu.html"); //ohjataan käyttäjä kirjautumaan
+	exit;
+}
 $poistettava = isset($_GET["poistettava"]) ? $_GET["poistettava"] : "";
 
 if (empty($poistettava)) { // jos poistettava on tyhjä, hypätään toiseen ohjelmaan
@@ -8,7 +15,7 @@ if (empty($poistettava)) { // jos poistettava on tyhjä, hypätään toiseen ohj
 mysqli_report(MYSQLI_REPORT_ALL ^ MYSQLI_REPORT_INDEX);
 
 try{ //olio $yhteys, antaa yhteyden tietokantaan
-    $yhteys=mysqli_connect("db", "erika", "projekti", "reseptikanta"); //jollekin palvelimelle, jollakin salasanalla ja käyttäjätunnuksella, johonkin tietokantaan
+    $yhteys=mysqli_connect("db", "erika", "projekti", "reseptikanta"); //palvelin, käyttäjätunnus, salasana, tietokanta
 }
 catch(Exception $e){
     print "Could not connect to the database!";
