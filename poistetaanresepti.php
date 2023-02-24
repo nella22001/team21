@@ -46,6 +46,7 @@ include ("sidenav.html");
         </div>
     </div>
 </div>
+<!--Tulostetaan reseptit ja saadaan poistettua-->
 <div class="parent-container d-flex">
     <div class="container">
         <div class="row">
