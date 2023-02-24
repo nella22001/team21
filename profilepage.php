@@ -7,7 +7,6 @@ if (!isset($_SESSION["user_ok"])){ //jos sessioniin ei ole laitettu sellaista us
 	exit;
 }
 ?>
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -22,51 +21,26 @@ if (!isset($_SESSION["user_ok"])){ //jos sessioniin ei ole laitettu sellaista us
     <title>Recipe World - My page</title>
 </head>
 <body>
-    
-    <div class="background_image"><!--background-->
-  
-        <header class="page-header header container-fluid text-center">
-         
-         <nav class="navbar navbar-expand-md"> <!--navigation bar with a logo-->
-            <a href="index.html"><img class="navbar-brand" src="assets/images/RecipeWorld.png" alt="Recipe World Logo"style="margin-left:10em;"></a>
-             <button class="navbar-toggler navbar-dark" type="button" data-toggle="collapse" data-target="#main-navigation">
-                 <span class="navbar-toggler-icon"></span>
-             </button>
-             <div class="collapse navbar-collapse" id="main-navigation">
-                 <ul class="navbar-nav">
-                     <li class="nav-item">
-                        <a class="nav-link" href="kirjaudu.html">Sign in</a>
-                    </li>
-                     <li class="navbar-item">
-                         <a class="nav-link" href="index.html">Home</a>
-                     </li>
-                     <li class="nav-item">
-                         <a class="nav-link" href="category.html">Recipes</a>
-                     </li>
-                     <li class="nav-item">
-                         <a class="nav-link" href="contact.html">Contact</a>
-                     </li>
-                 </ul>
-                 </div> <!--sivunavigointi reseptien lisäys,poisto, muokkaus aina kun ollaan omilla sivuilla-->
-                 <div class="sidenav">
-                <a href="lisaaresepti.php"><button class="button">Add a recipe</button></a>
-                <a href="reseptinmuokkaus.php"><button class="button">Edit recipes</button></a>
-                <a href="poistetaanresepti.php"><button class="button">Delete recipes</button></a>
-                <a href="kirjauduulos.php"><button class="button">Sign out</button></a>
-              </div>
-         </nav>
-         </header>
-         <br>
-         <br>
-         <br>
-         <br>
-         <br>
-         <br>
-         <br>
-         <br>
-         <br>
-         <br>
-         <br> <!--container josta löytyy käyttäjän tietoja, tässä tapauksessa nimi koska ei haluttu muuta-->
+<div class="background_image"><!--background-->
+
+<?php //header tässä kun ollaan php tiedostoissa
+include ("header.html");
+?>
+
+<?php //sivunavigointi reseptien lisäys,poisto, muokkaus aina kun ollaan omilla sivuilla
+include ("sidenav.html");
+?>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br> <!--container josta löytyy käyttäjän tietoja, tässä tapauksessa nimi koska ei haluttu muuta-->
          <div class="parent-container d-flex" style="background-color: rgb(244, 233, 233);">
             <div class="container">
                 <div class="row">
@@ -75,10 +49,9 @@ if (!isset($_SESSION["user_ok"])){ //jos sessioniin ei ole laitettu sellaista us
                         <br>
                         <br>
                         <?php
-                        //if (isset($_SESSION["user_ok"])){
-                            $yhteys=mysqli_connect("db", "erika", "projekti");
-                            $tietokanta=mysqli_select_db($yhteys, "reseptikanta");
-                            $tulos=mysqli_query($yhteys, "select * from reseptit");
+                        $yhteys=mysqli_connect("db", "erika", "projekti");
+                        $tietokanta=mysqli_select_db($yhteys, "reseptikanta");
+                        $tulos=mysqli_query($yhteys, "select * from reseptit");
                         print "<h2>Welcome, ".$_SESSION["user_ok"]."!</h2>";                        
                         ?>
 
@@ -86,7 +59,7 @@ if (!isset($_SESSION["user_ok"])){ //jos sessioniin ei ole laitettu sellaista us
                 </div>
             </div>
         </div>
-<!--Löytyy käyttäjän reseptit-->
+<!--Löytyy käyttäjän reseptit, tällä hetkellä VIRHEELLINEN, kaikkien käyttäjien reseptit-->
         <div class="parent-container d-flex">
             <div class="container">
                 <div class="row">
@@ -94,12 +67,11 @@ if (!isset($_SESSION["user_ok"])){ //jos sessioniin ei ole laitettu sellaista us
                         <h4>My recipes</h4>
                         <br>
                         <?php
-                         $tulos=mysqli_query($yhteys, "select * from reseptit");
-                         while ($rivi=mysqli_fetch_object($tulos)){
-                            print "$rivi->nimi<br>\n";
+                        $tulos=mysqli_query($yhteys, "select * from reseptit");
+                        while ($rivi=mysqli_fetch_object($tulos)){
+                        print "<a href=' ./haeomatreseptit.php?haettava=$rivi->id'>$rivi->nimi</a><br>\n";
                         }
                         ?>
-                        <!--<a href="https://nella22001.github.io/team21/recipe.html">Tom yum goong</a>-->
                     </div>
                 </div>
             </div>

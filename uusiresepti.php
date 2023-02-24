@@ -11,8 +11,7 @@ if (isset($_POST["nimi"]) && isset($_POST["ainekset"]) && isset($_POST["ohje"]))
     $nimi=$_POST["nimi"];
     $ainekset=$_POST["ainekset"];
     $ohje=$_POST["ohje"];
-}
-else {
+} else {
     print "Please fill out all the fields!";
 }
 

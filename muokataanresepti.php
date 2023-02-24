@@ -2,7 +2,7 @@
 session_start();
 //tutkitaan, onko olemassa käynnissäolevaa kirjautumista
 if (!isset($_SESSION["user_ok"])){ //jos sessioniin ei ole laitettu sellaista user ok arvoa, käyttäjä ei ole kirjautunut
-	$_SESSION["paluuosoite"]="poistetaanresepti.php"; //laitetaan sessioon talteen, minne oltiin menossa
+	$_SESSION["paluuosoite"]="muokataanresepti.php"; //laitetaan sessioon talteen, minne oltiin menossa
 	header("Location:kirjaudu.html"); //ohjataan käyttäjä kirjautumaan
 	exit;
 }
@@ -30,22 +30,22 @@ include ("header.html");
 <?php //sivunavigointi reseptien lisäys,poisto, muokkaus aina kun ollaan omilla sivuilla
 include ("sidenav.html");
 ?>
-<br><br><br><br><br><br><br><br><br>
-<div class="parent-container d-flex" style="background-color: rgb(244, 233, 233);">
-    <div class="container">
-        <div class="row">
-            <div class="col" style="margin-left: 10em;">
-            <h2>Remove recipes</h2>
-            <?php
-            //$yhteys=mysqli_connect("db", "erika", "projekti");
-            //$tietokanta=mysqli_select_db($yhteys, "reseptikanta");
-            //$tulos=mysqli_query($yhteys, "select * from reseptit");
-            //print "<h2>".$_SESSION["user_ok"]." - Delete recipes</h2>";                        
-            ?>
+<br><br><br><br><br><br><br><br>
+    <div class="parent-container d-flex" style="background-color: rgb(244, 233, 233);">
+        <div class="container">       
+             <div class="row">
+                <div class="col" style="margin-left: 10em;">
+                <h2>Edit recipes</h2>
+                <?php
+                //$yhteys=mysqli_connect("db", "erika", "projekti");
+                //$tietokanta=mysqli_select_db($yhteys, "reseptikanta");
+                //$tulos=mysqli_query($yhteys, "select * from reseptit");
+                //print "<h2>".$_SESSION["user_ok"]."</h2>";                        
+                ?>
+                </div>
             </div>
         </div>
     </div>
-</div>
 <div class="parent-container d-flex">
     <div class="container">
         <div class="row">
@@ -55,7 +55,7 @@ include ("sidenav.html");
             $tietokanta=mysqli_select_db($yhteys, "reseptikanta");
             $tulos=mysqli_query($yhteys, "select * from reseptit");
             while ($rivi=mysqli_fetch_object($tulos)){
-                print "<a href=' ./poistaresepti.php?poistettava=$rivi->id'>$rivi->nimi</a><br>";
+                print "<a href=' ./muokkaaresepti.php?muokattava=$rivi->id'>$rivi->nimi</a><br>";
             }
             ?>
             </div>

@@ -5,25 +5,13 @@
     height: 0px;
     background-position: center;
 }
-body{
-    text-align: center;
-    background-image: url(assets/images/BackgroundSalad.jpg);
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-    background-position: center;
-    background-size:100%
 
-} 
-.container5{
-  padding-right: 100%;
-  padding-left: 7%;
-}
-/*
 body {
+    background-image: url(/team21/assets/images/BackgroundSalad.jpg);
     padding: 0;
     margin: 0;
     background: rgba(255, 255, 255, 1);  
-}*/
+}
 .navbar {
     height: 15em;
 }
@@ -50,13 +38,13 @@ body {
 .navbar-collapse {
     justify-content: flex-end;
 }
-/*
+
 .background_image{
-    background-image: url(/team21/assets/images/BackgroundSalad.jpg);
+    
     background-size: cover;
     background-attachment: fixed;
     background-position: center;
-}*/
+}
 
 .container1{
     background-color:#fff;
@@ -70,11 +58,17 @@ body {
     padding-right: 16em;
 }
 
+.container5{
+    padding-left: 7em;
 
+}
+
+
+/* I commented out 
 main{
     position: relative;
 }
-
+*/
 .description { /* what does position absolute do... */
 	left: 2em;
 	top: 20em;
@@ -133,14 +127,3 @@ a:hover {
 .round {
     border-radius: 20px;
 }
-.sidenav {
-    height: 100%;
-    width: 160px; 
-    position: fixed; 
-    z-index: 1;
-    top: 0; 
-    left: 0;
-    background-color: #d4c5c5;
-    overflow-x: hidden;
-    padding-top: 20px;
-  }

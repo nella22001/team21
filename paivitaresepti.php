@@ -2,19 +2,18 @@
 session_start();
 //tutkitaan, onko olemassa käynnissäolevaa kirjautumista
 if (!isset($_SESSION["user_ok"])){ //jos sessioniin ei ole laitettu sellaista user ok arvoa, käyttäjä ei ole kirjautunut
-	$_SESSION["paluuosoite"]="paivitareseptit.php"; //laitetaan sessioon talteen, minne oltiin menossa
+	$_SESSION["paluuosoite"]="paivitaresepti.php"; //laitetaan sessioon talteen, minne oltiin menossa
 	header("Location:kirjaudu.html"); //ohjataan käyttäjä kirjautumaan
 	exit;
 }
+//luetaan lomakkeelta tulleet tiedot, jos syötteet ovat olemassa
+$nimi=isset($_POST["nimi"]) ? $_POST["nimi"] : ""; //??????????????onko nämä kunnossa
+$ainekset=isset($_POST["etunimi"]) ? $_POST["ainekset"] : "";
+$ohje=isset($_POST["sukunimi"]) ? $_POST["ohje"] : "";
 
-$nimi=isset($_POST["nimi"]) ? $_POST["id"] : ""; //??????????????onko nämä kunnossa
-$etunimi=isset($_POST["etunimi"]) ? $_POST["etunimi"] : "";
-$sukunimi=isset($_POST["sukunimi"]) ? $_POST["sukunimi"] : 0;
-
-//Jos ei tietoa ole annettu
-//ohjataan pyyntö takaisin lomakkeelle
+//Jos joku tieto puuttuu
 if (empty($nimi) || empty($ainekset) || empty($ohje)){
-    header("Location:uusiresepti.php");
+    print "Do not leave any fields empty!"; //MIKSI TULOSTAA TÄMÄN VAIKKA KAIKKI TIEDOT ANNETTU???????????????
     exit;
 }
 
@@ -41,6 +40,6 @@ mysqli_stmt_execute($stmt);
 //Suljetaan tietokantayhteys
 mysqli_close($yhteys);
 
-header("Location:./profilepage.php");
+header("Location:muokataanresepti.php");
 exit;
 ?>
