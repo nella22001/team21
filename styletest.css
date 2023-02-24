@@ -7,10 +7,9 @@
 }
 
 body {
-    background-image: url(/team21/assets/images/BackgroundSalad.jpg);
+    background-image:url(../images/BackgroundSalad.jpg);
     padding: 0;
     margin: 0;
-    background: rgba(255, 255, 255, 1);  
 }
 .navbar {
     height: 15em;
