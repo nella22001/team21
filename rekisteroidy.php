@@ -33,7 +33,7 @@ if (isset($_POST["tunnus"]) && isset($_POST["salasana"]) &&
         header("Location:rekisteroityminen.html");
      exit;
     }
-    }
+
     //Otetaan yhteys tietokantaan. Palvelimena db, joka on dockeriin asennettu tietokanta. Tunnus erika ja salasana on projekti. 
     //Jos ongelmia yhteydessä tai tietokantaan yhdistymisessä niin ilmoitetaan siitä. 
     $yhteys=mysqli_connect("db", "erika", "projekti");
