@@ -49,9 +49,6 @@ include ("sidenav.html");
                         <br>
                         <br>
                         <?php
-                        $yhteys=mysqli_connect("db", "erika", "projekti");
-                        $tietokanta=mysqli_select_db($yhteys, "reseptikanta");
-                        $tulos=mysqli_query($yhteys, "select * from reseptit");
                         print "<h2>Welcome, ".$_SESSION["user_ok"]."!</h2>";                        
                         ?>
 
@@ -67,6 +64,8 @@ include ("sidenav.html");
                         <h4>My recipes</h4>
                         <br>
                         <?php
+                        $yhteys=mysqli_connect("db", "erika", "projekti");
+                        $tietokanta=mysqli_select_db($yhteys, "reseptikanta");
                         $tulos=mysqli_query($yhteys, "select * from reseptit");
                         while ($rivi=mysqli_fetch_object($tulos)){
                         print "<a href=' ./haeomatreseptit.php?haettava=$rivi->id'>$rivi->nimi</a><br>\n";
