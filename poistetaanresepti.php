@@ -55,6 +55,7 @@ if (!isset($_SESSION["user_ok"])){ //jos sessioniin ei ole laitettu sellaista us
          <br>
          <br>
          <br>
+         <!--Tulostuu käyttäjä-->
            <div class="parent-container d-flex" style="background-color: rgb(244, 233, 233);">
             <div class="container">
                 <div class="row">
@@ -71,6 +72,7 @@ if (!isset($_SESSION["user_ok"])){ //jos sessioniin ei ole laitettu sellaista us
                 </div>
             </div>
         </div>
+        <!--Tulostuu reseptit ja perässä nappi joka vie poistaresepti.php-->
         <div class="parent-container d-flex">
 <div class="container">
 <div class="row">
