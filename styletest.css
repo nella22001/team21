@@ -1,0 +1,129 @@
+.header {
+    background-size: cover;
+    background-position: center;
+    width: 100%;
+    height: 0px;
+    background-position: center;
+}
+
+body {
+    background-image: url(/team21/assets/images/BackgroundSalad.jpg);
+    padding: 0;
+    margin: 0;
+    background: rgba(255, 255, 255, 1);  
+}
+.navbar {
+    height: 15em;
+}
+
+.navbar-brand {
+    color: #452E29;
+    cursor: pointer;
+    margin-left: 5em;
+    position: relative;
+}
+
+.nav-link {
+    color: #452e29;
+    margin-right: 5em;
+    background-color:  #F4E9E9;
+    border-radius: 3em;
+    box-shadow: 1px 1px 4px rgba(0, 0, 0, 0.25);
+    width: 6em;
+    text-align: center;
+}
+.nav-link:hover {
+    background-color: #d4c5c5;
+}
+.navbar-collapse {
+    justify-content: flex-end;
+}
+
+.background_image{
+    
+    background-size: cover;
+    background-attachment: fixed;
+    background-position: center;
+}
+
+.container1{
+    background-color:#fff;
+    position: relative;
+    color: #452e29;
+    padding-left: 5em;
+}
+
+.container2{
+    padding-left: 16em;
+    padding-right: 16em;
+}
+
+.container5{
+    padding-left: 7em;
+
+}
+
+
+/* I commented out 
+main{
+    position: relative;
+}
+*/
+.description { /* what does position absolute do... */
+	left: 2em;
+	top: 20em;
+    position: absolute;
+    /* transform: translate(-50%, -55%); */
+	text-align: left;
+    margin-left: 8em;
+}
+
+.button {
+    background-color: #F4E9E9;
+    margin-left: 10px;
+    margin-right: 10px;
+    line-height: 20px;
+    width: 130px;
+    border: none;
+    font-size: 16px;
+    color: #452E29;
+    padding: 2px 10px;
+    text-align: center;
+    display: inline-block;
+    margin: 4px 4px;
+    cursor: pointer;
+    border-radius: 20px;
+    box-shadow: 1px 1px 4px rgba(0, 0, 0, 0.25);
+}
+
+.button:hover {
+    background-color: #d4c5c5;
+    text-decoration: underline;
+}
+
+h1 {
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    text-align: center;
+    color: #452e29;
+}
+
+h2{
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    text-align: center;
+    color: #452e29;
+    
+}
+
+a:link{
+    text-decoration: none;
+    color: #452e29;
+}
+
+a:hover {
+    text-decoration: underline;
+    color: #452e29;
+  }
+
+.round {
+    border-radius: 20px;
+}
