@@ -70,6 +70,7 @@ include ("sidenav.html");
                         $tulos=mysqli_query($yhteys, "select * from reseptit");
                         while ($rivi=mysqli_fetch_object($tulos)){
                         print "<a href=' ./haeomatreseptit.php?haettava=$rivi->id'>$rivi->nimi</a><br>\n";
+                        //print "<a href=' ./haeomatreseptit.php'>$rivi->nimi</a><br>\n";
                         }
                         ?>
                     </div>
