@@ -70,10 +70,10 @@ include ("sidenav.html");
                     <input id=kursori type='text' name='nimi' value='<?php print $rivi->nimi;?>'><br>
 
                     <label for='ainekset'>Ingredients:</label><br> <!-- EI NÄY print $rivi->ainekset;!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!-->
-                    <textarea name='ainekset' cols='70' rows='15' value='<?php print $rivi->ainekset;?>'></textarea><br><br>
+                    <textarea name='ainekset' cols='70' rows='15'><?php print $rivi->ainekset;?></textarea><br><br>
 
                     <label for='ohje'>Cooking instructions:</label><br>
-                    <textarea name='ohje' cols='70' rows='15' value='<?php print $rivi->ohje;?>'></textarea><br><br>
+                    <textarea name='ohje' cols='70' rows='15'><?php print $rivi->ohje;?></textarea><br><br>
 
                     <input type='submit' name='ok' value='Update'><br><br>
                 </form>

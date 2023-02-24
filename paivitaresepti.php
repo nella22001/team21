@@ -7,9 +7,10 @@ if (!isset($_SESSION["user_ok"])){ //jos sessioniin ei ole laitettu sellaista us
 	exit;
 }
 //luetaan lomakkeelta tulleet tiedot, jos syötteet ovat olemassa
+$id=isset($_POST["id"]) ? $_POST["id"] : "";
 $nimi=isset($_POST["nimi"]) ? $_POST["nimi"] : ""; //??????????????onko nämä kunnossa
-$ainekset=isset($_POST["etunimi"]) ? $_POST["ainekset"] : "";
-$ohje=isset($_POST["sukunimi"]) ? $_POST["ohje"] : "";
+$ainekset=isset($_POST["ainekset"]) ? $_POST["ainekset"] : "";
+$ohje=isset($_POST["ohje"]) ? $_POST["ohje"] : "";
 
 //Jos joku tieto puuttuu
 if (empty($nimi) || empty($ainekset) || empty($ohje)){
