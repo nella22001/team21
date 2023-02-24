@@ -28,12 +28,12 @@ if (isset($_POST["tunnus"]) && isset($_POST["salasana"]) &&
     elseif(empty($salasana || $salasana2)){
         die('The password field is empty. Please try again!');
     }  
-    }
+
     else{
         header("Location:rekisteroityminen.html");
      exit;
     }
-
+    }
     //Otetaan yhteys tietokantaan. Palvelimena db, joka on dockeriin asennettu tietokanta. Tunnus erika ja salasana on projekti. 
     //Jos ongelmia yhteydessä tai tietokantaan yhdistymisessä niin ilmoitetaan siitä. 
     $yhteys=mysqli_connect("db", "erika", "projekti");
@@ -50,7 +50,9 @@ if (isset($_POST["tunnus"]) && isset($_POST["salasana"]) &&
     //Valmistellaan sql-lause.
     $stmt=mysqli_prepare($yhteys, $sql);
     //Sijoitetaan muuttujat oikeisiin paikkoihin. s tarkoittaamerkkijonoa. 
-    mysqli_stmt_bind_param($stmt, "ssss", $tunnus, $salasana, $etunimi, $sukunimi); 
+    mysqli_stmt_bind_param($stmt, "ssss", $tunnus, $salasana, $etunimi, $sukunimi);
+    //Suoritetaan sql-lause
+    mysqli_stmt_execute($stmt);
     //Suljetaan tietokantayhteys.
     mysqli_close($yhteys);
 
