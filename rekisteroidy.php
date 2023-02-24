@@ -51,6 +51,7 @@ if (isset($_POST["tunnus"]) && isset($_POST["salasana"]) &&
     $stmt=mysqli_prepare($yhteys, $sql);
     //Sijoitetaan muuttujat oikeisiin paikkoihin. s tarkoittaamerkkijonoa. 
     mysqli_stmt_bind_param($stmt, "ssss", $tunnus, $salasana, $etunimi, $sukunimi); 
+    //Suoritetaan sql-lause
     mysqli_stmt_execute($stmt);
     //Suljetaan tietokantayhteys.
     mysqli_close($yhteys);
