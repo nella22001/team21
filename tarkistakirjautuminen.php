@@ -23,13 +23,11 @@ mysqli_execute($stmt);
 $tulos=mysqli_stmt_get_result($stmt); //käytettiin selectiä ja prepared statementia, saadaan vastaus $tuloksella
 
 if ($rivi=mysqli_fetch_object($tulos)){ //jokin tulos löytyi
-    $error = false;
     $_SESSION["user_ok"]="ok";
     header("Location:".$_SESSION["paluuosoite"]); //kirjautuminen onnistui, ohjataan pyyntö sinne, minne oltiin alunperin menossa
     exit;
 }
 else{ //tulosta ei löytynyt
-    $error = true;
     header("Location:kirjaudu.html"); //lähetetään käyttäjä uudestaan kirjautumaan
     exit;
 } 
