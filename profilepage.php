@@ -40,7 +40,7 @@ include ("sidenav.html");
     <br>
     <br>
     <br>
-    <br> <!--container josta löytyy käyttäjän tietoja, tässä tapauksessa nimi koska ei haluttu muuta-->
+    <br> <!--container josta löytyy käyttäjän tietoja, tässä tapauksessa käyttäjätunnus koska ei haluttu muuta-->
          <div class="parent-container d-flex" style="background-color: rgb(244, 233, 233);">
             <div class="container">
                 <div class="row">
@@ -48,11 +48,8 @@ include ("sidenav.html");
                         <br>
                         <br>
                         <br>
-                        <?php
-                        $yhteys=mysqli_connect("db", "erika", "projekti");
-                        $tietokanta=mysqli_select_db($yhteys, "reseptikanta");
-                        $tulos=mysqli_query($yhteys, "select * from reseptit");
-                        print "<h2>Welcome, ".$_SESSION["user_ok"]."!</h2>";                        
+                        <?php //session laittaa talteen, kuka on kirjautunut, tervehditään käyttäjää
+                        print "<h2>Welcome, ".$_SESSION["user_ok"]."!</h2>";                     
                         ?>
 
                     </div>
@@ -67,16 +64,19 @@ include ("sidenav.html");
                         <h4>My recipes</h4>
                         <br>
                         <?php
-                        $tulos=mysqli_query($yhteys, "select * from reseptit");
-                        while ($rivi=mysqli_fetch_object($tulos)){
+                        $yhteys=mysqli_connect("db", "erika", "projekti"); // palvelin, käyttäjätunnus, salasana
+                        $tietokanta=mysqli_select_db($yhteys, "reseptikanta"); //tietokanta
+                        $tulos=mysqli_query($yhteys, "select * from reseptit"); //muuttujaan $tulos tallennetaan kyselyn vastaus
+                        while ($rivi=mysqli_fetch_object($tulos)){ //muuttujalle $rivi annetaan tuloksen tiedot
                         print "<a href=' ./haeomatreseptit.php?haettava=$rivi->id'>$rivi->nimi</a><br>\n";
+                        //print "<a href=' ./haeomatreseptit.php'>$rivi->nimi</a><br>\n";
                         }
                         ?>
                     </div>
                 </div>
             </div>
         </div>
-
+<!--reseptitauluun ominaisuus omistaja! ei lapsitaulua ollenkaan-->
         </div><!--background ends-->
 
         <script src="https://code.jquery.com/jquery-3.5.1.min.js" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
