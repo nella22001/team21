@@ -15,7 +15,8 @@ if (empty($poistettava)) { // jos poistettava on tyhjä, hypätään toiseen ohj
 mysqli_report(MYSQLI_REPORT_ALL ^ MYSQLI_REPORT_INDEX);
 
 try{ //olio $yhteys, antaa yhteyden tietokantaan
-    $yhteys=mysqli_connect("db", "erika", "projekti", "reseptikanta"); //palvelin, käyttäjätunnus, salasana, tietokanta
+    $yhteys=mysqli_connect("localhost", "trtkp22a3", "trtkp22816", "trtkp22a3");
+   // $yhteys=mysqli_connect($tk["databaseserver"],  $tk["username"], $tk["password"], $tk["database"]); //jos otetaan ht.asetukset käyttöön //palvelin, käyttäjätunnus, salasana, tietokanta
 }
 catch(Exception $e){
     print "Could not connect to the database!";
