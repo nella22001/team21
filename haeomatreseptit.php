@@ -27,7 +27,7 @@ catch(Exception $e){
 
 
 //KORJAA TÄMÄ KOODI, resulti tulee statementilta
-$sql="select nimi, ainekset, ohje from reseptit where id=?";
+$sql="select (nimi, ainekset, ohje) from reseptit where id=?";
 //Valmistellaan sql-lause
 $stmt=mysqli_prepare($yhteys, $sql);
 //Sijoitetaan muuttujat oikeisiin paikkoihin
