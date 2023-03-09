@@ -25,6 +25,7 @@ catch(Exception $e){
     exit;
 }
 
+
 //KORJAA TÄMÄ KOODI, resulti tulee statementilta
 $sql="select nimi, ainekset, ohje from reseptit where id=?";
 //Valmistellaan sql-lause
