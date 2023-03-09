@@ -64,7 +64,7 @@ include ("sidenav.html");
                         <h4>My recipes</h4>
                         <br>
                         <?php
-                        $yhteys=msqli_connect("db", "erika", "projekti"); //palvelin, käyttäjätunnus, salasana
+                        $yhteys=msqli_connect("db", "root", "password"); //palvelin, käyttäjätunnus, salasana
                         $tietokanta=mysqli_select_db($yhteys, "reseptikanta"); //tietokanta
                         //$yhteys=mysqli_connect("localhost", "trtkp22a3", "trtkp22816"); // palvelin, käyttäjätunnus, salasana  $yhteys=mysqli_connect($tk["databaseserver"],  $tk["username"], $tk["password"], $tk["database"]); //jos otetaan ht.asetukset käyttöön
                         //$tietokanta=mysqli_select_db($yhteys, "trtkp22a3"); //tietokanta
