@@ -53,7 +53,7 @@ include ("sidenav.html");
             <div class="col" style="margin-left:5em; margin-top: 5em;">
             <?php
             $yhteys=mysqli_connect("localhost", "trtkp22a3", "trtkp22816");
-            $tietokanta=mysqli_select_db($yhteys, "trtkp22a3"); //LOCALHOST VAI DB TUOHON???  $yhteys=mysqli_connect($tk["databaseserver"],  $tk["username"], $tk["password"], $tk["database"]); //jos otetaan ht.asetukset käyttöön
+            $tietokanta=mysqli_select_db($yhteys, "trtkp22a3"); //  $yhteys=mysqli_connect($tk["databaseserver"],  $tk["username"], $tk["password"], $tk["database"]); //jos otetaan ht.asetukset käyttöön
             $tulos=mysqli_query($yhteys, "select * from reseptit");
             while ($rivi=mysqli_fetch_object($tulos)){
                 print "<a href=' ./poistaresepti.php?poistettava=$rivi->id'>$rivi->nimi</a><br>";
