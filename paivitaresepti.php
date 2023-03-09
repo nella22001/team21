@@ -8,13 +8,13 @@ if (!isset($_SESSION["user_ok"])){ //jos sessioniin ei ole laitettu sellaista us
 }
 //luetaan lomakkeelta tulleet tiedot, jos syötteet ovat olemassa
 $id=isset($_POST["id"]) ? $_POST["id"] : "";
-$nimi=isset($_POST["nimi"]) ? $_POST["nimi"] : ""; //??????????????onko nämä kunnossa
+$nimi=isset($_POST["nimi"]) ? $_POST["nimi"] : "";
 $ainekset=isset($_POST["ainekset"]) ? $_POST["ainekset"] : "";
 $ohje=isset($_POST["ohje"]) ? $_POST["ohje"] : "";
 
 //Jos joku tieto puuttuu
 if (empty($nimi) || empty($ainekset) || empty($ohje)){
-    print "Do not leave any fields empty!"; //MIKSI TULOSTAA TÄMÄN VAIKKA KAIKKI TIEDOT ANNETTU???????????????
+    print "Do not leave any fields empty!"; //Tulosti tämän, koska $id puuttui listauksesta ylhäältä, korjattu
     exit;
 }
 
