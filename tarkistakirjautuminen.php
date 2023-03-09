@@ -14,7 +14,9 @@ else{
 }
 
 $yhteys=mysqli_connect("db", "erika", "projekti");
+// $yhteys=mysqli_connect("localhost", "trtkp22a3", "trtkp22816");
 $tietokanta=mysqli_select_db($yhteys, "reseptikanta");
+// $tietokanta=mysqli_select_db($yhteys, "trtkp22a3");
 
 $sql="select * from kayttaja where tunnus=? and salasana=md5(?)";
 $stmt=mysqli_prepare($yhteys, $sql);
