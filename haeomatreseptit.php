@@ -20,6 +20,15 @@ catch(Exception $e){
     print "Could not connect to the database!";
     exit;
 }
+$sql="update reseptit set nimi=?, ainekset=?, ohje=? where id=?";
+
+//Valmistellaan sql-lause
+$stmt=mysqli_prepare($yhteys, $sql);
+//Sijoitetaan muuttujat oikeisiin paikkoihin
+mysqli_stmt_bind_param($stmt, 'sssi', $nimi, $ainekset, $ohje, $id);
+//Suoritetaan sql-lause
+mysqli_stmt_execute($stmt);
+
 //KORJAA TÄMÄ KOODI, resulti tulee statementilta
 // $sql="insert into reseptit (nimi, ainekset, ohje) values(?, ?, ?)";
 // //Valmistellaan sql-lause
