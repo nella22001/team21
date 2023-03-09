@@ -14,7 +14,7 @@ $tk=parse_ini_file(".ht.asetukset.ini");
 try{
     $yhteys=mysqli_connect("db", "erika", "projekti", "reseptikanta"); //jos ei oteta ht.asetukset käyttöön
     //$yhteys=mysqli_connect("localhost", "trtkp22a3", "trtkp22816", "trtkp22a3");
-    $yhteys=mysqli_connect($tk["databaseserver"],  $tk["username"], $tk["password"], $tk["database"]); //jos otetaan ht.asetukset käyttöön
+    //$yhteys=mysqli_connect($tk["databaseserver"],  $tk["username"], $tk["password"], $tk["database"]); //jos otetaan ht.asetukset käyttöön
 }
 catch(Exception $e){
     print "Could not connect to the database!";
