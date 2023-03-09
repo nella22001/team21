@@ -64,9 +64,11 @@ include ("sidenav.html");
                         <h4>My recipes</h4>
                         <br>
                         <?php
-                        $yhteys=mysqli_connect("localhost", "trtkp22a3", "trtkp22816"); // palvelin, käyttäjätunnus, salasana  $yhteys=mysqli_connect($tk["databaseserver"],  $tk["username"], $tk["password"], $tk["database"]); //jos otetaan ht.asetukset käyttöön
-                        $tietokanta=mysqli_select_db($yhteys, "trtkp22a3"); //tietokanta
-                        $tulos=mysqli_query($yhteys, "select * from reseptit"); //muuttujaan $tulos tallennetaan kyselyn vastaus
+                        // $yhteys=mysqli_connect("localhost", "trtkp22a3", "trtkp22816"); // palvelin, käyttäjätunnus, salasana  $yhteys=mysqli_connect($tk["databaseserver"],  $tk["username"], $tk["password"], $tk["database"]); //jos otetaan ht.asetukset käyttöön
+                        $yhteys=mysqli_connect("db", "erika", "projekti");
+                       //  $tietokanta=mysqli_select_db($yhteys, "trtkp22a3"); //tietokanta
+                       // $tulos=mysqli_query($yhteys, "select * from reseptit"); //muuttujaan $tulos tallennetaan kyselyn vastaus
+                        $tietokanta=mysqli_select_db($yhteys, "reseptikanta");
                         while ($rivi=mysqli_fetch_object($tulos)){ //muuttujalle $rivi annetaan tuloksen tiedot
                         print "<a href=' ./haeomatreseptit.php?haettava=$rivi->id'>$rivi->nimi</a><br>\n";
                         //print "<a href=' ./haeomatreseptit.php'>$rivi->nimi</a><br>\n";
