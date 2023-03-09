@@ -19,6 +19,7 @@ mysqli_report(MYSQLI_REPORT_ALL ^ MYSQLI_REPORT_INDEX);
 
 try{
     $yhteys=mysqli_connect("db", "erika", "projekti", "reseptikanta");
+    // $yhteys=mysqli_connect("localhost", "trtkp22a3", "trtkp22816");
 }
 catch(Exception $e){
     print "Could not connect to the database!";
