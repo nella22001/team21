@@ -18,8 +18,8 @@ if (isset($_POST["nimi"]) && isset($_POST["ainekset"]) && isset($_POST["ohje"]))
 mysqli_report(MYSQLI_REPORT_ALL ^ MYSQLI_REPORT_INDEX);
 
 try{
-    $yhteys=mysqli_connect("db", "erika", "projekti", "reseptikanta");
-    // $yhteys=mysqli_connect("localhost", "trtkp22a3", "trtkp22816");
+    //$yhteys=mysqli_connect("db", "erika", "projekti", "reseptikanta");
+    $yhteys=mysqli_connect("localhost", "trtkp22a3", "trtkp22816", "trtkp22a3");
 }
 catch(Exception $e){
     print "Could not connect to the database!";
