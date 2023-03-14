@@ -52,10 +52,10 @@ include ("sidenav.html");
         <div class="row">
             <div class="col" style="margin-left:5em; margin-top: 5em;">
             <?php
-            //$yhteys=msqli_connect("db", "erika", "projekti"); //palvelin, käyttäjätunnus, salasana
-            //$tietokanta=mysqli_select_db($yhteys, "reseptikanta");
-            $yhteys=mysqli_connect("localhost", "trtkp22a3", "trtkp22816");
-            $tietokanta=mysqli_select_db($yhteys, "trtkp22a3"); //  $yhteys=mysqli_connect($tk["databaseserver"],  $tk["username"], $tk["password"], $tk["database"]); //jos otetaan ht.asetukset käyttöön
+            $yhteys=mysqli_connect("db", "erika", "projekti"); //palvelin, käyttäjätunnus, salasana
+            $tietokanta=mysqli_select_db($yhteys, "reseptikanta");
+            //$yhteys=mysqli_connect("localhost", "trtkp22a3", "trtkp22816");
+            //$tietokanta=mysqli_select_db($yhteys, "trtkp22a3"); //  $yhteys=mysqli_connect($tk["databaseserver"],  $tk["username"], $tk["password"], $tk["database"]); //jos otetaan ht.asetukset käyttöön
             $tulos=mysqli_query($yhteys, "select * from reseptit");
             while ($rivi=mysqli_fetch_object($tulos)){
                 print "<a href=' ./poistaresepti.php?poistettava=$rivi->id'>$rivi->nimi</a><br>";

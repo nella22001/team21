@@ -36,13 +36,13 @@ if (isset($_POST["tunnus"]) && isset($_POST["salasana"]) &&
 
     //Otetaan yhteys tietokantaan. Palvelimena db, joka on dockeriin asennettu tietokanta. Tunnus erika ja salasana on projekti. 
     //Jos ongelmia yhteydessä tai tietokantaan yhdistymisessä niin ilmoitetaan siitä. 
-    //$yhteys=mysqli_connect("db", "erika", "projekti");
-    $yhteys=mysqli_connect("localhost", "trtkp22a3", "trtkp22816");
+    $yhteys=mysqli_connect("db", "erika", "projekti");
+    //$yhteys=mysqli_connect("localhost", "trtkp22a3", "trtkp22816");
     if (!$yhteys) {
         die ("Failed to create a connection: " . mysqli_connect_error());
     }
-    //$tietokanta=mysqli_select_db($yhteys, "reseptikanta");
-    $tietokanta=mysqli_select_db($yhteys, "trtkp22a3");
+    $tietokanta=mysqli_select_db($yhteys, "reseptikanta");
+    //$tietokanta=mysqli_select_db($yhteys, "trtkp22a3");
     if (!$tietokanta) {
         die ("Failed to connect to the right database: " . mysqli_connect_error());
     }

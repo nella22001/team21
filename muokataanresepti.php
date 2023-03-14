@@ -51,9 +51,9 @@ include ("sidenav.html");
         <div class="row">
             <div class="col" style="margin-left:5em; margin-top: 5em;">
             <?php
-            $yhteys=mysqli_connect("localhost", "trtkp22a3", "trtkp22816", "trtkp22a3");
-            //$yhteys=mysqli_connect("db", "erika", "projekti");
-            //$tietokanta=mysqli_select_db($yhteys, "reseptikanta");
+            //$yhteys=mysqli_connect("localhost", "trtkp22a3", "trtkp22816", "trtkp22a3");
+            $yhteys=mysqli_connect("db", "erika", "projekti");
+            $tietokanta=mysqli_select_db($yhteys, "reseptikanta");
             $tulos=mysqli_query($yhteys, "select * from reseptit");
             while ($rivi=mysqli_fetch_object($tulos)){
                 print "<a href=' ./muokkaaresepti.php?muokattava=$rivi->id'>$rivi->nimi</a><br>";

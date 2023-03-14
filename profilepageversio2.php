@@ -30,7 +30,16 @@ include ("header.html");
 <?php //sivunavigointi reseptien lisäys,poisto, muokkaus aina kun ollaan omilla sivuilla
 include ("sidenav.html");
 ?>
-    <br><br><br><br><br><br><br><br><br><br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
     <br> <!--container josta löytyy käyttäjän tietoja, tässä tapauksessa käyttäjätunnus koska ei haluttu muuta-->
          <div class="parent-container d-flex" style="background-color: rgb(244, 233, 233);">
             <div class="container">
@@ -47,23 +56,45 @@ include ("sidenav.html");
                 </div>
             </div>
         </div>
-<!--Löytyy kaikkien käyttäjien reseptit-->
+<!--TÄMÄ VERSIO KÄYTTÄÄ AJAXIA/JSONIA RESEPTIEN HAKEMISEEN, TIEDOSTOT HAERESEPTIT.PHP JA HAEYKSIRESEPTI.PHP-->
         <div class="parent-container d-flex">
             <div class="container">
                 <div class="row">
                     <div class="col" style="margin-left:5em; margin-top: 5em;">
                         <h4>My recipes</h4>
                         <br>
-                        <?php
-                        $yhteys=mysqli_connect("db", "erika", "projekti"); //palvelin, käyttäjätunnus, salasana
-                        $tietokanta=mysqli_select_db($yhteys, "reseptikanta"); //tietokanta
-                        //$yhteys=mysqli_connect("localhost", "trtkp22a3", "trtkp22816"); // palvelin, käyttäjätunnus, salasana  $yhteys=mysqli_connect($tk["databaseserver"],  $tk["username"], $tk["password"], $tk["database"]); //jos otetaan ht.asetukset käyttöön
-                        //$tietokanta=mysqli_select_db($yhteys, "trtkp22a3"); //tietokanta
-                        $tulos=mysqli_query($yhteys, "select * from reseptit"); //muuttujaan $tulos tallennetaan kyselyn vastaus
-                        while ($rivi=mysqli_fetch_object($tulos)){ //muuttujalle $rivi annetaan tuloksen tiedot
-                        print "<a href=' ./haeomatreseptit.php?haettava=$rivi->id'>$rivi->nimi</a><br>\n";
+                        <script>
+                        //Ensimmäinen funktio kaikkien reseptien nimien hakemiseen
+                        function haereseptit() { //funktio buttonia varten, jotta button toimii
+                            xmlhttp = new XMLHttpRequest(); //osaa tehdä requestin
+	                        xmlhttp.onreadystatechange = function() {
+	                        if (this.readyState == 4 && this.status == 200) {
+		                        document.getElementById("result").innerHTML = this.responseText; //result paikassa tulostaa kaikki teksti, mitä löytyi
+	                        }
+	                    };
+	                    xmlhttp.open("GET", "./haereseptit.php", true); //tämä ainoastaan hakee reseptit tietokannasta, ei vielä tulosta
+	                    xmlhttp.send();	
                         }
-                        ?>
+                        //Toinen funktio yksittäisen reseptin tietojen hakemiseen
+                        function haeyksiresepti(indeksi) {
+                            xmlhttp = new XMLHttpRequest(); //osaa tehdä requestin
+	                        xmlhttp.onreadystatechange = function() {
+	                        if (this.readyState == 4 && this.status == 200) {
+		                        document.getElementById("haetaan").innerHTML = this.responseText; //haetaan paikassa tulostaa kaikki teksti, mitä löytyi
+                            }
+	                    };
+	                    xmlhttp.open("GET", "./haeyksiresepti.php?haetaan="+indeksi, true); //tämä hakee yhden reseptin indeksin perusteella
+	                    xmlhttp.send();	
+                        }
+                        </script>
+                        <button class="button" onclick="haereseptit();">Show my recipes!</button><br><br>
+                        <br>
+                        <div id='result'>
+                            <!--tänne tulostetaan funktio haereseptit-->
+                        </div>
+                        <div id='haetaan'>
+                            <!--tänne tulostetaan funktio haeyksiresepti-->
+                        </div>
                     </div>
                 </div>
             </div>

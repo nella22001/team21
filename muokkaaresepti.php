@@ -18,8 +18,8 @@ if (empty($muokattava)){
 
 mysqli_report(MYSQLI_REPORT_ALL ^ MYSQLI_REPORT_INDEX);
 try{
+    //$yhteys=mysqli_connect("localhost", "trtkp22a3", "trtkp22816", "trtkp22a3");
     $yhteys=mysqli_connect("db", "erika", "projekti", "reseptikanta");
-   // $yhteys=mysqli_connect("localhost", "trtkp22a3", "trtkp22816");
 }
 catch(Exception $e){
     print "Could not connect to the database!";
@@ -70,7 +70,7 @@ include ("sidenav.html");
                     <label for='nimi'>Name of the recipe:</label><br>
                     <input id=kursori type='text' name='nimi' value='<?php print $rivi->nimi;?>'><br>
 
-                    <label for='ainekset'>Ingredients:</label><br> <!-- EI NÄY print $rivi->ainekset;!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!-->
+                    <label for='ainekset'>Ingredients:</label><br>
                     <textarea name='ainekset' cols='70' rows='15'><?php print $rivi->ainekset;?></textarea><br><br>
 
                     <label for='ohje'>Cooking instructions:</label><br>
